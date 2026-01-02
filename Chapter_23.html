@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 23 Practical. Hypothesis testing and t-tests | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 23 Practical. Hypothesis testing and t-tests | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2025-04-09" />
+<meta name="date" content="2026-01-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -110,6 +110,7 @@ code span.wa { font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -574,7 +575,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_23" class="section level1 hasAnchor" number="23">
 <h1><span class="header-section-number">Chapter 23</span> <em>Practical</em>. Hypothesis testing and t-tests<a href="Chapter_23.html#Chapter_23" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This chapter focuses on applying the concepts about hypothesis testing from <a href="Chapter_21.html#Chapter_21">Chapter 21</a> and the statistical tests from <a href="Chapter_22.html#Chapter_22">Chapter 22</a> in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project 2024</a>)</span>.
+<p>This chapter focuses on applying the concepts about hypothesis testing from <a href="Chapter_21.html#Chapter_21">Chapter 21</a> and the statistical tests from <a href="Chapter_22.html#Chapter_22">Chapter 22</a> in jamovi <span class="citation">(<a href="#ref-Jamovi2022">The jamovi project 2024</a>)</span>.
 There will be five exercises in total, which will focus on using t-tests and their non-parametric equivalents.
 The data for this chapter focus on an example of biology and environmental sciences education.
 Similar to the example in <a href="Chapter_22.html#Chapter_22">Chapter 22</a>, it uses datasets of student test scores (note that these data are entirely fictional; I have not used scores from real students).
@@ -617,7 +618,7 @@ Recall from <a href="Chapter_22.html#assumptions-of-t-tests">Section 22.4</a> th
 <p>We will first focus on the first and third assumption.
 First, the sample data are indeed continuous.
 But are the sample means normally distributed around the true mean?
-A sufficient condition to fulfil this assumption is that the sample data are normally distributed <span class="citation">(<a href="#ref-Johnson1995" role="doc-biblioref">Johnson 1995</a>; <a href="#ref-Lumley2002" role="doc-biblioref">Lumley et al. 2002</a>)</span>.
+A sufficient condition to fulfil this assumption is that the sample data are normally distributed <span class="citation">(<a href="#ref-Johnson1995">Johnson 1995</a>; <a href="#ref-Lumley2002">Lumley et al. 2002</a>)</span>.
 We can test whether or not the overall mean student scores are normally distributed.
 In the jamovi toolbar, find the button that says ‘T-Tests’ (second from the left), then choose ‘One Sample T-test’ from the pull-down menu.
 A new window will open up.
@@ -879,7 +880,7 @@ What could you do to test the null hypothesis that the change in scores from Tes
 
 
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Johnson1995" class="csl-entry">
 Johnson, Douglas H. 1995. <span>“<span class="nocase">Statistical sirens: The allure of nonparametrics</span>.”</span> <em>Ecology</em> 76 (6): 1998–2000.
 </div>
@@ -917,42 +918,42 @@ The jamovi project. 2024. <span>“Jamovi (Version 2.5).”</span> Sydney, Austr
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/06-Hypothesis_Testing.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/06-Hypothesis_Testing.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

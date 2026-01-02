@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 32 Simple linear regression | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 32 Simple linear regression | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2025-04-09" />
+<meta name="date" content="2026-01-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -110,6 +110,7 @@ code span.wa { font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -580,19 +581,19 @@ At first, this might sound similar to correlation, which was introduced in <a hr
 Simple linear regression and correlation are indeed similar, both conceptually and mathematically, and the two are frequently confused.
 Both methods focus on two quantitative variables, but the general aim of regression is different from correlation.
 The aim of correlation is to describe how the variance of one variable is associated with the variance of another variable.
-In other words, the correlation measures the intensity of covariance between variables <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+In other words, the correlation measures the intensity of covariance between variables <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>.
 But there is no attempt to predict what the value of one variable will be based on the other.</p>
 <p>Linear regression, in contrast to correlation, focuses on prediction.
 The aim is to predict the value of one quantitative variable <span class="math inline">\(Y\)</span> given the value of another quantitative variable <span class="math inline">\(X\)</span>.
-In other words, regression focuses on an association of dependence in which the value of <span class="math inline">\(Y\)</span> depends on the value of <span class="math inline">\(X\)</span> <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman 1968</a>)</span>.
-The <span class="math inline">\(Y\)</span> variable is therefore called the <strong>dependent variable</strong>; it is also sometimes called the response variable or the output variable <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
-The <span class="math inline">\(X\)</span> variable is called the <strong>independent variable</strong>; it is also sometimes called the predictor variable or the regressor <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+In other words, regression focuses on an association of dependence in which the value of <span class="math inline">\(Y\)</span> depends on the value of <span class="math inline">\(X\)</span> <span class="citation">(<a href="#ref-Rahman1968">Rahman 1968</a>)</span>.
+The <span class="math inline">\(Y\)</span> variable is therefore called the <strong>dependent variable</strong>; it is also sometimes called the response variable or the output variable <span class="citation">(<a href="#ref-Box1978">Box, Hunter, and Hunter 1978</a>; <a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>.
+The <span class="math inline">\(X\)</span> variable is called the <strong>independent variable</strong>; it is also sometimes called the predictor variable or the regressor <span class="citation">(<a href="#ref-Box1978">Box, Hunter, and Hunter 1978</a>; <a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>.
 Unlike correlation, the distinction between the two variable types matters because the aim is to understand how a change in the independent variable will affect the dependent variable.
 For example, if we increase <span class="math inline">\(X\)</span> by 1, how much will <span class="math inline">\(Y\)</span> change?</p>
 <div id="visual-interpretation-of-regression" class="section level2 hasAnchor" number="32.1">
 <h2><span class="header-section-number">32.1</span> Visual interpretation of regression<a href="Chapter_32.html#visual-interpretation-of-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A visual example using a scatterplot can illustrate one way to think about regression.
-Suppose that we have sampled fig fruits from various latitudes (Figure 32.1), and we want to use latitude to predict fruit volume <span class="citation">(<a href="#ref-Duthie2016" role="doc-biblioref">Duthie and Nason 2016</a>)</span>.</p>
+Suppose that we have sampled fig fruits from various latitudes (Figure 32.1), and we want to use latitude to predict fruit volume <span class="citation">(<a href="#ref-Duthie2016">Duthie and Nason 2016</a>)</span>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-140"></span>
 <img src="img/FigTree2.jpg" alt="Two panels with green fig fruits are shown on branches with fig wasps on the surface of them, and a panel to the right shows a man on a rock reaching into the crown of a fig tree with a stick." width="100%" />
 <p class="caption">
@@ -789,7 +790,7 @@ In other words, about 62% of the variation in fruit volume is explained by latit
 <div id="regression-assumptions" class="section level2 hasAnchor" number="32.6">
 <h2><span class="header-section-number">32.6</span> Regression assumptions<a href="Chapter_32.html#regression-assumptions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>It is important to be aware of the assumptions underlying linear regression.
-There are four key assumptions underlying the simple linear regression models described in this chapter <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>:</p>
+There are four key assumptions underlying the simple linear regression models described in this chapter <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>:</p>
 <ol style="list-style-type: decimal">
 <li><p>Measurement of the independent variable (<span class="math inline">\(x\)</span>) is completely accurate. In other words, there is no measurement error for the independent variable.
 Of course, this assumption is almost certainly violated to some degree because every measurement has some associated error (see <a href="Chapter_6.html#accuracy">Section 6.1</a> and <a href="Chapter_7.html#Chapter_7">Chapter 7</a>).</p></li>
@@ -847,7 +848,7 @@ We can test the null hypothesis that <span class="math inline">\(b_{0} = 0\)</sp
 <li><span class="math inline">\(H_{A}\)</span>: The intercept does not equal 0.</li>
 </ul>
 <p>The estimate of <span class="math inline">\(b_{0}\)</span> is t-distributed (see <a href="Chapter_19.html#Chapter_19">Chapter 19</a>) around the true parameter value <span class="math inline">\(\beta_{0}\)</span>.
-Jamovi will therefore report a t-value for the intercept, along with a p-value that we can use to reject or not reject <span class="math inline">\(H_{0}\)</span> <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project 2024</a>)</span>.</p>
+Jamovi will therefore report a t-value for the intercept, along with a p-value that we can use to reject or not reject <span class="math inline">\(H_{0}\)</span> <span class="citation">(<a href="#ref-Jamovi2022">The jamovi project 2024</a>)</span>.</p>
 </div>
 <div id="significance-of-the-slope" class="section level3 hasAnchor" number="32.7.3">
 <h3><span class="header-section-number">32.7.3</span> Significance of the slope<a href="Chapter_32.html#significance-of-the-slope" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -922,7 +923,7 @@ In the next chapter, we move on to multiple regression, in which regression mode
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Box1978" class="csl-entry">
 Box, G E P, W G Hunter, and S J Hunter. 1978. <em><span class="nocase">Statistics for Experimenters: An Introduction to Design, Data Analysis, and Model Building</span></em>. John Wiley &amp; Sons, New York, USA.
 </div>
@@ -969,42 +970,42 @@ The jamovi project. 2024. <span>“Jamovi (Version 2.5).”</span> Sydney, Austr
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/10-Regression.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/10-Regression.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

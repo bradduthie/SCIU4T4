@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 12 Measures of spread | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 12 Measures of spread | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2025-04-09" />
+<meta name="date" content="2026-01-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -110,6 +110,7 @@ code span.wa { font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -589,7 +590,7 @@ The best approach to learning them is to see them and practice using them in dif
 <div id="the-range" class="section level2 hasAnchor" number="12.1">
 <h2><span class="header-section-number">12.1</span> The range<a href="Chapter_12.html#the-range" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The range of a set of numbers is probably the most intuitive measure of spread.
-It is simply the difference between the highest and the lowest value of a dataset <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+It is simply the difference between the highest and the lowest value of a dataset <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>.
 To calculate it, we just need to take the highest value minus the lowest value.
 If we want to be technical, then we can write a general equation for the range of a random variable <span class="math inline">\(X\)</span>,</p>
 <p><span class="math display">\[\mathrm{Range}(X) = \max(X) - \min(X).\]</span></p>
@@ -606,7 +607,7 @@ Below are the masses of plant A, in which leaf masses are very similar and close
 We can do the same for plant B, which has a highest value of 8.2 g and lowest value of 1.2 g,</p>
 <p><span class="math display">\[\mathrm{Range}(plant\:B) = 8.2 - 1.2 = 7.0\]</span></p>
 <p>Plant B therefore has a much higher range than plant A.</p>
-<p>It is important to mention that the range is highly sensitive to outliers <span class="citation">(<a href="#ref-Navarro2022" role="doc-biblioref">Navarro and Foxcroft 2022</a>)</span>.
+<p>It is important to mention that the range is highly sensitive to outliers <span class="citation">(<a href="#ref-Navarro2022">Navarro and Foxcroft 2022</a>)</span>.
 Just adding a single number to either plant A or plant B could dramatically change the range.
 For example, imagine if we measured a leaf in plant A to have a mass of 19.7 g (i.e., we found a huge leaf!).
 The range of plant A would then be <span class="math inline">\(19.7 - 4.7 = 15\)</span> instead of 0.6.
@@ -632,7 +633,7 @@ Here are the masses of plant B leaves sorted.</p>
 <p>The first quartile of plant B is 3.65, and the third quartile is 6.70.
 To get the IQR of plant B,</p>
 <p><span class="math display">\[IQR_{\mathrm{plant\:B}} = 6.70 - 3.65 = 3.05.\]</span></p>
-<p>An important point about the IQR is that it is more robust than the range <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>)</span>.
+<p>An important point about the IQR is that it is more robust than the range <span class="citation">(<a href="#ref-Dytham2011">Dytham 2011</a>)</span>.
 Recall that if we found an outlier leaf of 19.7 g on plant A, it would change the range of plant leaf mass from 0.6 to 15 g.
 The IQR is not nearly so sensitive.
 If we include the outlier, the first quartile for plant A changes from <span class="math inline">\(Q_{1} = 4.95\)</span> to <span class="math inline">\(Q_{1} = 4.975\)</span>.
@@ -694,26 +695,26 @@ Why would we subtract 1 here?
 The short answer is that in calculating a <em>sample</em> variance, <span class="math inline">\(s^{2}\)</span>, we are almost always trying to estimate the corresponding <em>population</em> variance (<span class="math inline">\(\sigma^{2}\)</span>).
 And if we were to just use <span class="math inline">\(N\)</span> instead of <span class="math inline">\(N - 1\)</span>, then our <span class="math inline">\(s^{2}\)</span> would be a biased estimate of <span class="math inline">\(\sigma^{2}\)</span> (see <a href="Chapter_4.html#Chapter_4">Chapter 4</a> for a reminder on the difference between samples and populations).
 By subtracting 1, we are correcting for this bias to get a more accurate estimate of the population variance<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a>.
-It is not necessary to do this ourselves; jamovi will do it automatically <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project 2024</a>)</span>.
+It is not necessary to do this ourselves; jamovi will do it automatically <span class="citation">(<a href="#ref-Jamovi2022">The jamovi project 2024</a>)</span>.
 The subtraction is required due to a reduction in the <em>degrees of freedom</em> that occurs when using the sample mean in the equation for variance<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a>.</p>
-<p><strong>Degrees of freedom</strong> is a difficult concept to understand, but we can broadly define the degrees of freedom as the number of independent pieces of information that we have when calculating a statistic <span class="citation">(<a href="#ref-Grafen2002" role="doc-biblioref">Grafen and Hails 2022</a>; <a href="#ref-Upton2014" role="doc-biblioref">Upton and Cook 2014</a>)</span>.
-When we need to estimate a parameter from a dataset in the process of calculating a statistic, we lose an independent piece of information, and therefore a degree of freedom <span class="citation">(<a href="#ref-Pandey2008" role="doc-biblioref">Pandey and Bright 2008</a>)</span>.
+<p><strong>Degrees of freedom</strong> is a difficult concept to understand, but we can broadly define the degrees of freedom as the number of independent pieces of information that we have when calculating a statistic <span class="citation">(<a href="#ref-Grafen2002">Grafen and Hails 2022</a>; <a href="#ref-Upton2014">Upton and Cook 2014</a>)</span>.
+When we need to estimate a parameter from a dataset in the process of calculating a statistic, we lose an independent piece of information, and therefore a degree of freedom <span class="citation">(<a href="#ref-Pandey2008">Pandey and Bright 2008</a>)</span>.
 For example, if we collect <span class="math inline">\(N = 10\)</span> samples, then there are 10 independent pieces of information that we can use to calculate the mean.
 To calculate the variance, we use all of these 10 samples <em>and</em> <span class="math inline">\(\bar{x}\)</span> (note that <span class="math inline">\(\bar{x}\)</span> appears in the equation for variance above).
 This suggests that we actually have 11 independent pieces of information when making our calculation (all of the samples and the sample mean).
 But not all of these values are actually free to vary.
 When we know what the 10 sample values are, then the sample mean is fixed.
 And if we know what 9 sample values are and what the mean is, then we can work out what the last sample value must be.
-We therefore lose a degree of freedom by including <span class="math inline">\(\bar{x}\)</span> in the calculation of variance, so we need to divide by <span class="math inline">\(N - 1\)</span> rather than <span class="math inline">\(N\)</span> to avoid bias <span class="citation">(<a href="#ref-Wardlaw1985" role="doc-biblioref">Wardlaw 1985</a>; <a href="#ref-Fowler1998" role="doc-biblioref">Fowler, Cohen, and Jarvis 1998</a>)</span>.
-Another way of thinking about degrees of freedom is as the number of differences that can arise between what we sample versus what we expect just based on the mathematics <span class="citation">(<a href="#ref-Fryer1966" role="doc-biblioref">Fryer 1966</a>)</span>.
+We therefore lose a degree of freedom by including <span class="math inline">\(\bar{x}\)</span> in the calculation of variance, so we need to divide by <span class="math inline">\(N - 1\)</span> rather than <span class="math inline">\(N\)</span> to avoid bias <span class="citation">(<a href="#ref-Wardlaw1985">Wardlaw 1985</a>; <a href="#ref-Fowler1998">Fowler, Cohen, and Jarvis 1998</a>)</span>.
+Another way of thinking about degrees of freedom is as the number of differences that can arise between what we sample versus what we expect just based on the mathematics <span class="citation">(<a href="#ref-Fryer1966">Fryer 1966</a>)</span>.
 In other words, how much is our calculation free to vary just due to chance?
 In calculating the variance, the mathematics introduces a constraint by including <span class="math inline">\(\bar{x}\)</span>, thereby reducing degrees of freedom.</p>
 <p>This was a lot of information.
 The variance is not an intuitive concept.
 In addition to being a challenge to calculate, the calculation of a variance leaves us with a value in units squared.
 That is, for the example of plant leaf mass in grams, the variance is measured in grams squared, <span class="math inline">\(\mathrm{g^{2}}\)</span>, which is not particularly easy to interpret.
-For more on this, <span class="citation">Navarro and Foxcroft (<a href="#ref-Navarro2022" role="doc-biblioref">2022</a>)</span> have a really good <a href="https://davidfoxcroft.github.io/lsj-book/04-Descriptive-statistics.html#variance">section</a> on the variance.
-Despite its challenges as a descriptive statistic, the variance has some mathematical properties that are very useful <span class="citation">(<a href="#ref-Navarro2022" role="doc-biblioref">Navarro and Foxcroft 2022</a>)</span>, especially in the biological and environmental sciences.</p>
+For more on this, <span class="citation">Navarro and Foxcroft (<a href="#ref-Navarro2022">2022</a>)</span> have a really good <a href="https://davidfoxcroft.github.io/lsj-book/04-Descriptive-statistics.html#variance">section</a> on the variance.
+Despite its challenges as a descriptive statistic, the variance has some mathematical properties that are very useful <span class="citation">(<a href="#ref-Navarro2022">Navarro and Foxcroft 2022</a>)</span>, especially in the biological and environmental sciences.</p>
 <p>For example, variances are additive, meaning that if we are measuring two separate characteristics of a sample, A and B, then the variance of A+B equals the variance of A plus the variance of B, i.e., <span class="math inline">\(\mathrm{Var}(A + B) = \mathrm{Var}(A) + \mathrm{Var}(B)\)</span>.<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a>
 This is relevant to genetics when measuring heritability.
 Here, the total variance in the phenotype of a population (e.g., body mass of animals) can be partitioned into variance attributable to genetics plus variance attributable to the environment,</p>
@@ -727,7 +728,7 @@ Nevertheless, as a descriptive statistic to communicate the spread of a variable
 <h2><span class="header-section-number">12.4</span> The standard deviation<a href="Chapter_12.html#the-standard-deviation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The standard deviation of the mean (<span class="math inline">\(s\)</span>) is just the square root of the variance,</p>
 <p><span class="math display">\[s = \sqrt{\frac{1}{N - 1}\sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right)^{2}}.\]</span></p>
-<p>This is a simple step, mathematically, but it also is easier to understand conceptually as a measure of spread <span class="citation">(<a href="#ref-Navarro2022" role="doc-biblioref">Navarro and Foxcroft 2022</a>)</span>.
+<p>This is a simple step, mathematically, but it also is easier to understand conceptually as a measure of spread <span class="citation">(<a href="#ref-Navarro2022">Navarro and Foxcroft 2022</a>)</span>.
 By taking the square root of the variance, our units are no longer squared, so we can interpret the standard deviation in the same terms as our original data.
 For example, the leaf masses of plant A and plant B in the example above were measured in grams.
 While the variance of these masses was in grams squared, the standard deviation is in grams, just like the original measurements.
@@ -746,11 +747,11 @@ The reason for this is that the units cancel out when dividing the standard devi
 For example, for the leaf masses of plant A, we calculated a standard deviation of 0.1825 <span class="math inline">\(\mathrm{g}\)</span> and a mean of 5 <span class="math inline">\(\mathrm{g}\)</span>.
 We can see the units cancel below,</p>
 <p><span class="math display">\[CV = \frac{0.1825\:\mathrm{g}}{5\:\mathrm{g}} = 0.0365.\]</span></p>
-<p>The resulting <span class="math inline">\(CV\)</span> of 0.0365 has no units; it is <em>dimensionless</em> <span class="citation">(<a href="#ref-Lande1977" role="doc-biblioref">Lande 1977</a>)</span>.
+<p>The resulting <span class="math inline">\(CV\)</span> of 0.0365 has no units; it is <em>dimensionless</em> <span class="citation">(<a href="#ref-Lande1977">Lande 1977</a>)</span>.
 Because it has no units, it is often used to compare measurements with much different means or with different measurement units.
-For example, <span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span> suggest that biologists might want to compare tail length variation between animals with much different body sizes, such as elephants and mice.
+For example, <span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995">1995</a>)</span> suggest that biologists might want to compare tail length variation between animals with much different body sizes, such as elephants and mice.
 The standard deviation of tail lengths between these two species will likely be much different just because of their difference in size, so by standardising by mean tail length, it can be easier to compare relative standard deviation.
-This is a common application of the <span class="math inline">\(CV\)</span> in biology, but it needs to be interpreted carefully <span class="citation">(<a href="#ref-Pelabon2020" role="doc-biblioref">Pélabon et al. 2020</a>)</span>.</p>
+This is a common application of the <span class="math inline">\(CV\)</span> in biology, but it needs to be interpreted carefully <span class="citation">(<a href="#ref-Pelabon2020">Pélabon et al. 2020</a>)</span>.</p>
 <p>Often, we will want to express the coefficient of variation as a percentage of the mean.
 To do this, we just need to multiply the <span class="math inline">\(CV\)</span> above by 100%.
 For example, to express the <span class="math inline">\(CV\)</span> as a percentage, we would multiply the 0.0365 above by 100%, which would give us a final answer of <span class="math inline">\(CV\)</span> <span class="math inline">\(= 3.65\)</span>%.</p>
@@ -814,282 +815,282 @@ Each row is a different sampling effort, and columns report the 10 samples from 
 <tbody>
 <tr class="odd">
 <td align="center"><strong>S1</strong></td>
+<td align="center">0.59</td>
+<td align="center">0.68</td>
 <td align="center">0.69</td>
-<td align="center">0.82</td>
-<td align="center">0.65</td>
-<td align="center">0.72</td>
-<td align="center">0.56</td>
-<td align="center">0.63</td>
-<td align="center">0.55</td>
-<td align="center">0.84</td>
-<td align="center">0.58</td>
-<td align="center">0.77</td>
+<td align="center">0.68</td>
+<td align="center">0.67</td>
+<td align="center">0.80</td>
+<td align="center">0.86</td>
+<td align="center">0.83</td>
+<td align="center">0.66</td>
+<td align="center">0.85</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>S2</strong></td>
-<td align="center">0.80</td>
-<td align="center">0.74</td>
-<td align="center">0.80</td>
-<td align="center">0.87</td>
-<td align="center">0.77</td>
-<td align="center">0.71</td>
-<td align="center">0.49</td>
-<td align="center">0.90</td>
+<td align="center">0.68</td>
+<td align="center">0.47</td>
+<td align="center">0.73</td>
+<td align="center">0.48</td>
+<td align="center">0.85</td>
+<td align="center">0.68</td>
+<td align="center">0.62</td>
+<td align="center">0.62</td>
+<td align="center">0.68</td>
 <td align="center">0.70</td>
-<td align="center">0.79</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>S3</strong></td>
-<td align="center">0.78</td>
-<td align="center">0.63</td>
-<td align="center">0.73</td>
+<td align="center">0.71</td>
+<td align="center">0.90</td>
 <td align="center">0.62</td>
-<td align="center">0.58</td>
-<td align="center">0.60</td>
-<td align="center">0.74</td>
-<td align="center">0.85</td>
-<td align="center">0.41</td>
-<td align="center">0.61</td>
+<td align="center">0.62</td>
+<td align="center">0.62</td>
+<td align="center">0.73</td>
+<td align="center">0.75</td>
+<td align="center">0.77</td>
+<td align="center">0.65</td>
+<td align="center">0.65</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>S4</strong></td>
-<td align="center">0.91</td>
-<td align="center">0.66</td>
-<td align="center">0.72</td>
+<td align="center">0.73</td>
+<td align="center">0.77</td>
+<td align="center">0.61</td>
+<td align="center">0.69</td>
+<td align="center">0.60</td>
 <td align="center">0.54</td>
-<td align="center">0.57</td>
 <td align="center">0.74</td>
-<td align="center">0.83</td>
-<td align="center">0.67</td>
-<td align="center">0.56</td>
-<td align="center">0.58</td>
+<td align="center">0.84</td>
+<td align="center">0.57</td>
+<td align="center">0.80</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>S5</strong></td>
-<td align="center">0.69</td>
+<td align="center">0.64</td>
+<td align="center">0.67</td>
 <td align="center">0.76</td>
-<td align="center">0.62</td>
-<td align="center">0.68</td>
-<td align="center">0.81</td>
-<td align="center">0.52</td>
-<td align="center">0.56</td>
-<td align="center">0.79</td>
-<td align="center">0.73</td>
-<td align="center">0.70</td>
+<td align="center">0.65</td>
+<td align="center">0.76</td>
+<td align="center">0.85</td>
+<td align="center">0.72</td>
+<td align="center">0.71</td>
+<td align="center">0.84</td>
+<td align="center">0.86</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>S6</strong></td>
-<td align="center">0.90</td>
-<td align="center">0.77</td>
-<td align="center">0.74</td>
-<td align="center">0.66</td>
-<td align="center">0.84</td>
-<td align="center">0.55</td>
+<td align="center">0.51</td>
+<td align="center">0.62</td>
+<td align="center">0.97</td>
+<td align="center">0.78</td>
+<td align="center">0.76</td>
+<td align="center">0.70</td>
+<td align="center">0.83</td>
+<td align="center">0.76</td>
 <td align="center">0.68</td>
-<td align="center">0.64</td>
-<td align="center">0.57</td>
-<td align="center">0.82</td>
+<td align="center">0.88</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>S7</strong></td>
-<td align="center">0.66</td>
-<td align="center">0.70</td>
-<td align="center">0.67</td>
-<td align="center">0.70</td>
-<td align="center">0.79</td>
-<td align="center">0.66</td>
-<td align="center">0.79</td>
-<td align="center">0.77</td>
 <td align="center">0.82</td>
-<td align="center">0.83</td>
+<td align="center">0.82</td>
+<td align="center">0.65</td>
+<td align="center">0.43</td>
+<td align="center">0.72</td>
+<td align="center">0.66</td>
+<td align="center">0.69</td>
+<td align="center">0.82</td>
+<td align="center">0.79</td>
+<td align="center">0.80</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>S8</strong></td>
-<td align="center">0.76</td>
-<td align="center">0.63</td>
-<td align="center">0.72</td>
-<td align="center">0.84</td>
-<td align="center">0.70</td>
-<td align="center">0.68</td>
-<td align="center">0.68</td>
-<td align="center">1.00</td>
-<td align="center">0.76</td>
-<td align="center">0.56</td>
+<td align="center">0.66</td>
+<td align="center">0.85</td>
+<td align="center">0.65</td>
+<td align="center">0.48</td>
+<td align="center">0.71</td>
+<td align="center">1.03</td>
+<td align="center">0.65</td>
+<td align="center">0.64</td>
+<td align="center">0.77</td>
+<td align="center">0.58</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>S9</strong></td>
-<td align="center">0.93</td>
-<td align="center">0.75</td>
-<td align="center">0.74</td>
-<td align="center">0.77</td>
-<td align="center">0.84</td>
-<td align="center">0.69</td>
-<td align="center">0.85</td>
+<td align="center">0.73</td>
 <td align="center">0.80</td>
+<td align="center">0.88</td>
+<td align="center">0.68</td>
+<td align="center">0.52</td>
+<td align="center">0.84</td>
 <td align="center">0.76</td>
-<td align="center">0.59</td>
+<td align="center">0.72</td>
+<td align="center">0.76</td>
+<td align="center">0.79</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>S10</strong></td>
-<td align="center">0.71</td>
-<td align="center">0.74</td>
+<td align="center">0.61</td>
+<td align="center">0.60</td>
+<td align="center">0.50</td>
+<td align="center">0.86</td>
+<td align="center">0.67</td>
 <td align="center">0.64</td>
-<td align="center">0.80</td>
-<td align="center">0.77</td>
-<td align="center">0.73</td>
-<td align="center">0.77</td>
-<td align="center">0.76</td>
-<td align="center">0.78</td>
-<td align="center">0.62</td>
+<td align="center">0.75</td>
+<td align="center">0.67</td>
+<td align="center">0.99</td>
+<td align="center">0.75</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>S11</strong></td>
-<td align="center">0.78</td>
-<td align="center">0.46</td>
-<td align="center">0.62</td>
-<td align="center">0.83</td>
-<td align="center">0.76</td>
-<td align="center">0.75</td>
+<td align="center">0.70</td>
 <td align="center">0.71</td>
+<td align="center">0.62</td>
+<td align="center">0.57</td>
+<td align="center">0.54</td>
+<td align="center">0.58</td>
+<td align="center">0.66</td>
+<td align="center">0.70</td>
 <td align="center">0.72</td>
-<td align="center">0.65</td>
-<td align="center">0.65</td>
+<td align="center">0.64</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>S12</strong></td>
-<td align="center">0.60</td>
-<td align="center">0.75</td>
-<td align="center">0.88</td>
-<td align="center">0.65</td>
-<td align="center">0.81</td>
-<td align="center">0.52</td>
-<td align="center">0.76</td>
-<td align="center">0.85</td>
-<td align="center">0.50</td>
-<td align="center">0.60</td>
+<td align="center">0.68</td>
+<td align="center">0.83</td>
+<td align="center">0.61</td>
+<td align="center">0.64</td>
+<td align="center">0.78</td>
+<td align="center">0.56</td>
+<td align="center">0.87</td>
+<td align="center">0.69</td>
+<td align="center">0.71</td>
+<td align="center">0.68</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>S13</strong></td>
-<td align="center">0.64</td>
-<td align="center">0.68</td>
-<td align="center">0.75</td>
-<td align="center">0.75</td>
-<td align="center">0.64</td>
-<td align="center">0.68</td>
-<td align="center">0.81</td>
-<td align="center">0.63</td>
-<td align="center">0.83</td>
+<td align="center">0.78</td>
+<td align="center">0.77</td>
 <td align="center">0.66</td>
+<td align="center">0.71</td>
+<td align="center">0.55</td>
+<td align="center">0.84</td>
+<td align="center">0.76</td>
+<td align="center">0.66</td>
+<td align="center">0.63</td>
+<td align="center">0.64</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>S14</strong></td>
-<td align="center">0.87</td>
-<td align="center">0.80</td>
-<td align="center">0.65</td>
+<td align="center">0.76</td>
+<td align="center">0.89</td>
+<td align="center">0.63</td>
+<td align="center">0.67</td>
+<td align="center">0.60</td>
 <td align="center">0.74</td>
-<td align="center">0.55</td>
-<td align="center">0.70</td>
-<td align="center">0.72</td>
+<td align="center">0.78</td>
+<td align="center">0.63</td>
+<td align="center">0.68</td>
 <td align="center">0.82</td>
-<td align="center">0.57</td>
-<td align="center">0.80</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>S15</strong></td>
-<td align="center">0.68</td>
-<td align="center">0.74</td>
-<td align="center">0.73</td>
-<td align="center">0.63</td>
-<td align="center">0.75</td>
-<td align="center">0.70</td>
+<td align="center">0.61</td>
+<td align="center">0.61</td>
+<td align="center">0.60</td>
+<td align="center">0.79</td>
+<td align="center">0.81</td>
+<td align="center">0.72</td>
 <td align="center">0.77</td>
-<td align="center">0.73</td>
+<td align="center">0.93</td>
 <td align="center">0.63</td>
-<td align="center">0.66</td>
+<td align="center">0.56</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>S16</strong></td>
-<td align="center">0.84</td>
-<td align="center">0.73</td>
-<td align="center">0.53</td>
-<td align="center">0.82</td>
-<td align="center">0.66</td>
+<td align="center">0.99</td>
 <td align="center">0.71</td>
-<td align="center">1.00</td>
+<td align="center">0.71</td>
+<td align="center">0.80</td>
+<td align="center">0.58</td>
+<td align="center">0.75</td>
+<td align="center">0.83</td>
+<td align="center">0.59</td>
+<td align="center">0.58</td>
 <td align="center">0.87</td>
-<td align="center">0.70</td>
-<td align="center">0.65</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>S17</strong></td>
-<td align="center">0.57</td>
+<td align="center">0.70</td>
 <td align="center">0.65</td>
-<td align="center">0.80</td>
-<td align="center">0.46</td>
-<td align="center">0.66</td>
-<td align="center">0.78</td>
 <td align="center">0.68</td>
-<td align="center">0.72</td>
-<td align="center">0.66</td>
-<td align="center">0.77</td>
+<td align="center">0.67</td>
+<td align="center">0.78</td>
+<td align="center">0.70</td>
+<td align="center">0.85</td>
+<td align="center">0.70</td>
+<td align="center">0.80</td>
+<td align="center">0.86</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>S18</strong></td>
-<td align="center">0.60</td>
-<td align="center">0.74</td>
-<td align="center">0.59</td>
-<td align="center">0.61</td>
+<td align="center">0.72</td>
 <td align="center">0.78</td>
+<td align="center">0.80</td>
+<td align="center">0.61</td>
 <td align="center">0.67</td>
-<td align="center">0.66</td>
-<td align="center">0.64</td>
-<td align="center">0.74</td>
-<td align="center">0.85</td>
+<td align="center">0.68</td>
+<td align="center">0.59</td>
+<td align="center">0.72</td>
+<td align="center">0.71</td>
+<td align="center">0.62</td>
 </tr>
 <tr class="odd">
 <td align="center"><strong>S19</strong></td>
-<td align="center">0.63</td>
-<td align="center">0.73</td>
-<td align="center">0.62</td>
-<td align="center">0.70</td>
-<td align="center">0.58</td>
-<td align="center">0.65</td>
-<td align="center">0.72</td>
-<td align="center">0.77</td>
-<td align="center">0.80</td>
 <td align="center">0.83</td>
+<td align="center">0.76</td>
+<td align="center">0.79</td>
+<td align="center">0.52</td>
+<td align="center">0.72</td>
+<td align="center">0.76</td>
+<td align="center">0.70</td>
+<td align="center">0.76</td>
+<td align="center">0.77</td>
+<td align="center">0.72</td>
 </tr>
 <tr class="even">
 <td align="center"><strong>S20</strong></td>
-<td align="center">0.74</td>
-<td align="center">0.79</td>
+<td align="center">0.59</td>
+<td align="center">0.65</td>
 <td align="center">0.76</td>
-<td align="center">0.71</td>
-<td align="center">0.66</td>
-<td align="center">0.63</td>
-<td align="center">0.66</td>
-<td align="center">0.66</td>
-<td align="center">0.44</td>
-<td align="center">0.70</td>
+<td align="center">0.73</td>
+<td align="center">1.01</td>
+<td align="center">0.53</td>
+<td align="center">0.80</td>
+<td align="center">0.78</td>
+<td align="center">0.73</td>
+<td align="center">0.73</td>
 </tr>
 </tbody>
 </table>
 <p>We can calculate the mean of each sample by calculating the mean of each row.
 These 20 means are reported below.</p>
 <pre><code>      [,1]  [,2]  [,3]  [,4]  [,5]  [,6]  [,7]  [,8]  [,9] [,10]
-[1,] 0.681 0.757 0.655 0.678 0.686 0.717 0.739 0.733 0.772 0.732
-[2,] 0.693 0.692 0.707 0.722 0.702 0.751 0.675 0.688 0.703 0.675</code></pre>
-<p>The standard deviation of the 20 sample means reported above is 0.0314791.
+[1,] 0.731 0.651 0.702 0.689 0.746 0.749 0.720 0.702 0.748 0.704
+[2,] 0.644 0.705 0.700 0.720 0.703 0.741 0.739 0.690 0.733 0.731</code></pre>
+<p>The standard deviation of the 20 sample means reported above is 0.0295357.
 Now suppose that we only had Sample 1 (i.e., top row of data).
-The standard deviation of Sample 1 is <span class="math inline">\(s =\)</span> 0.1052457.
+The standard deviation of Sample 1 is <span class="math inline">\(s =\)</span> 0.0948039.
 We can calculate the standard error from these sample values below,</p>
-<p><span class="math display">\[s = \frac{0.1052457}{\sqrt{10}} = 0.0332816.\]</span></p>
-<p>The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0314791, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0332816.
+<p><span class="math display">\[s = \frac{0.0948039}{\sqrt{10}} = 0.0299796.\]</span></p>
+<p>The estimate of the standard error from calculating the standard deviation of the sample means is therefore 0.0295357, and the estimate from just using the standard error formula and data from only Sample 1 is 0.0299796.
 These are reasonably close, and they would be even closer if we had either a larger sample size in each sample (i.e., higher <span class="math inline">\(N\)</span>) or a larger number of samples.</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Dytham2011" class="csl-entry">
 Dytham, Calvin. 2011. <em><span class="nocase">Choosing and Using Statistics: A Biologist’s Guide</span></em>. John Wiley &amp; Sons, West Sussex, UK.
 </div>
@@ -1130,9 +1131,9 @@ Wardlaw, Alastair C. 1985. <em><span class="nocase">Practical Statistics for Exp
 <div class="footnotes">
 <hr />
 <ol start="9">
-<li id="fn9"><p>If you are wondering why we square the difference <span class="math inline">\(x_{i} - \bar{x}\)</span> instead of just taking its absolute value, this is an excellent question! You have just invented something called the mean absolute deviation. There are some reasons why the mean absolute deviation is not as good of a measure of spread as the variance. <span class="citation">Navarro and Foxcroft (<a href="#ref-Navarro2022" role="doc-biblioref">2022</a>)</span> explain the mean absolute deviation, and how it relates to the variance, very well in <a href="https://davidfoxcroft.github.io/lsj-book/04-Descriptive-statistics.html#mean-absolute-deviation">section 4.2.3</a> of their textbook. We will not get into these points here, but it would be good to check out <span class="citation">Navarro and Foxcroft (<a href="#ref-Navarro2022" role="doc-biblioref">2022</a>)</span> for more explanation.<a href="Chapter_12.html#fnref9" class="footnote-back">↩︎</a></p></li>
+<li id="fn9"><p>If you are wondering why we square the difference <span class="math inline">\(x_{i} - \bar{x}\)</span> instead of just taking its absolute value, this is an excellent question! You have just invented something called the mean absolute deviation. There are some reasons why the mean absolute deviation is not as good of a measure of spread as the variance. <span class="citation">Navarro and Foxcroft (<a href="#ref-Navarro2022">2022</a>)</span> explain the mean absolute deviation, and how it relates to the variance, very well in <a href="https://davidfoxcroft.github.io/lsj-book/04-Descriptive-statistics.html#mean-absolute-deviation">section 4.2.3</a> of their textbook. We will not get into these points here, but it would be good to check out <span class="citation">Navarro and Foxcroft (<a href="#ref-Navarro2022">2022</a>)</span> for more explanation.<a href="Chapter_12.html#fnref9" class="footnote-back">↩︎</a></p></li>
 <li id="fn10"><p>To get the true population variance <span class="math inline">\(\sigma^{2}\)</span>, we would also need to know the true mean <span class="math inline">\(\mu\)</span>. But we can only estimate <span class="math inline">\(\mu\)</span> from the sample, <span class="math inline">\(\bar{x}\)</span>. That is, what we would really want to calculate is <span class="math inline">\(x_{i} - \mu\)</span>, but the best we can do is <span class="math inline">\(x_{i} - \bar{x}\)</span>. The consequence of this is that there will be some error that underestimates the true distance of <span class="math inline">\(x_{i}\)</span> values from the population mean, <span class="math inline">\(\mu\)</span>. Here is the really cool part: to determine the extent to which our estimate of the variance is biased by using <span class="math inline">\(\bar{x}\)</span> instead of <span class="math inline">\(\mu\)</span>, we just need to know the expected squared difference between the two values, <span class="math inline">\((\bar{x} - \mu)^{2}\)</span>. It turns out that this difference (i.e., the bias of our estimate <span class="math inline">\(s^{2}\)</span>) is just <span class="math inline">\(\sigma^{2} / N\)</span>, that is, the true variance of the population divided by the sample size. If we subtract this value from <span class="math inline">\(\sigma^{2}\)</span>, so <span class="math inline">\(\sigma^{2} - \sigma^{2}/N\)</span>, then we can get the expected difference between the true variance and the estimate from the sample size. We can rearrange <span class="math inline">\(\sigma^{2} - \sigma^{2}/N\)</span> to get <span class="math inline">\(\sigma^{2} \times (N - 1)/N\)</span>, which means that we need to correct our sample variance by <span class="math inline">\(N / (N-1)\)</span> to get an unbiased estimate of <span class="math inline">\(\sigma^{2}\)</span>. If all of this is confusing, that is okay! This is really only relevant for those interested in statistical theory, which is not the focus of this book.<a href="Chapter_12.html#fnref10" class="footnote-back">↩︎</a></p></li>
-<li id="fn11"><p>In the case of sample variance, note that we needed to use all the values <span class="math inline">\(x_{i}\)</span> in the dataset and the sample mean <span class="math inline">\(\bar{x}\)</span>. But if we know what all of the <span class="math inline">\(x_{i}\)</span> values are, then we also know <span class="math inline">\(\bar{x}\)</span>. And if we know all but one value of <span class="math inline">\(x_{i}\)</span> and <span class="math inline">\(\bar{x}\)</span>, then we could figure out the last <span class="math inline">\(x_{i}\)</span>. Hence, while we are using <span class="math inline">\(N\)</span> values in the calculation of <span class="math inline">\(s^{2}\)</span>, the use of <span class="math inline">\(\bar{x}\)</span> reduces the degree to which these values are free to vary. We have lost 1 degree of freedom in the calculation of <span class="math inline">\(\bar{x}\)</span>, so we need to account for this in our calculation of <span class="math inline">\(s^{2}\)</span> by dividing by <span class="math inline">\(N - 1\)</span>. This is another way to think about the <span class="math inline">\(N - 1\)</span> correction factor <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span> explained in the previous footnote.<a href="Chapter_12.html#fnref11" class="footnote-back">↩︎</a></p></li>
+<li id="fn11"><p>In the case of sample variance, note that we needed to use all the values <span class="math inline">\(x_{i}\)</span> in the dataset and the sample mean <span class="math inline">\(\bar{x}\)</span>. But if we know what all of the <span class="math inline">\(x_{i}\)</span> values are, then we also know <span class="math inline">\(\bar{x}\)</span>. And if we know all but one value of <span class="math inline">\(x_{i}\)</span> and <span class="math inline">\(\bar{x}\)</span>, then we could figure out the last <span class="math inline">\(x_{i}\)</span>. Hence, while we are using <span class="math inline">\(N\)</span> values in the calculation of <span class="math inline">\(s^{2}\)</span>, the use of <span class="math inline">\(\bar{x}\)</span> reduces the degree to which these values are free to vary. We have lost 1 degree of freedom in the calculation of <span class="math inline">\(\bar{x}\)</span>, so we need to account for this in our calculation of <span class="math inline">\(s^{2}\)</span> by dividing by <span class="math inline">\(N - 1\)</span>. This is another way to think about the <span class="math inline">\(N - 1\)</span> correction factor <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span> explained in the previous footnote.<a href="Chapter_12.html#fnref11" class="footnote-back">↩︎</a></p></li>
 <li id="fn12"><p>This has one caveat, which is not important for now. Values of A and B must be uncorrelated. That is, A and B cannot covary. If A and B covary, i.e., <span class="math inline">\(\mathrm{Cov}(A, B) \neq 0\)</span>, then <span class="math inline">\(\mathrm{Var}(A+B) = \mathrm{Var}(A) + \mathrm{Var}(B) + \mathrm{Cov}(A, B)\)</span>. That is, we need to account for the covariance when calculating <span class="math inline">\(\mathrm{Var}(A+B)\)</span>.<a href="Chapter_12.html#fnref12" class="footnote-back">↩︎</a></p></li>
 <li id="fn13"><p><a href="https://bradduthie.github.io/stats/app/forest/" class="uri">https://bradduthie.github.io/stats/app/forest/</a><a href="Chapter_12.html#fnref13" class="footnote-back">↩︎</a></p></li>
 <li id="fn14"><p><a href="https://bradduthie.github.io/stats/app/normal_pos_neg/" class="uri">https://bradduthie.github.io/stats/app/normal_pos_neg/</a><a href="Chapter_12.html#fnref14" class="footnote-back">↩︎</a></p></li>
@@ -1158,42 +1159,42 @@ Wardlaw, Alastair C. 1985. <em><span class="nocase">Practical Statistics for Exp
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-Summary_statistics.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/03-Summary_statistics.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

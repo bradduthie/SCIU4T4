@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Uncertainty propagation | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Uncertainty propagation | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2025-04-09" />
+<meta name="date" content="2026-01-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -110,6 +110,7 @@ code span.wa { font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -589,13 +590,13 @@ For example, we might repeat the measurement of an object’s mass with a differ
 <p>Sometimes it is necessary to combine different measured values.
 For example, we might measure the mass of two different bird eggs in a nest separately, then calculate the total mass of both eggs combined.
 The measurement of each egg will have its own error, and these errors will propagate to determine the error of the total egg mass for the nest.
-How this error propagates differs depending on if they are being added or subtracted, or if errors are being multiplied or divided <span class="citation">(<a href="#ref-Navidi2006" role="doc-biblioref">Navidi 2006</a>)</span>.</p>
+How this error propagates differs depending on if they are being added or subtracted, or if errors are being multiplied or divided <span class="citation">(<a href="#ref-Navidi2006">Navidi 2006</a>)</span>.</p>
 <div id="adding-or-subtracting-errors" class="section level2 hasAnchor" number="7.1">
 <h2><span class="header-section-number">7.1</span> Adding or subtracting errors<a href="Chapter_7.html#adding-or-subtracting-errors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In the case of our egg masses, we can assign the mass of the first egg to the variable <span class="math inline">\(X\)</span> and the mass of the second egg to the variable <span class="math inline">\(Y\)</span>.
 We can assign the total mass to the variable <span class="math inline">\(Z\)</span>, where <span class="math inline">\(Z = X + Y\)</span>.
 The measurement errors associated with the variables <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, and <span class="math inline">\(Z\)</span> can be indicated by <span class="math inline">\(E_{X}\)</span>, <span class="math inline">\(E_{Y}\)</span>, and <span class="math inline">\(E_{Z}\)</span>, respectively.
-In general, if the variable <span class="math inline">\(Z\)</span> is calculated by adding (or subtracting) 2 or more values together, then this is the formula for calculating <span class="math inline">\(E_{Z}\)</span> <span class="citation">(<a href="#ref-Allie2003" role="doc-biblioref">Allie et al. 2003</a>)</span>,</p>
+In general, if the variable <span class="math inline">\(Z\)</span> is calculated by adding (or subtracting) 2 or more values together, then this is the formula for calculating <span class="math inline">\(E_{Z}\)</span> <span class="citation">(<a href="#ref-Allie2003">Allie et al. 2003</a>)</span>,</p>
 <p><span class="math display">\[E_{Z} = \sqrt{E^{2}_{X} + E^{2}_{Y}}.\]</span></p>
 <p>Hence, for the egg masses, the error of the combined masses (<span class="math inline">\(E_{Z}\)</span>) equals the square root of the error associated with the mass of egg 1 squared (<span class="math inline">\(E^{2}_{X}\)</span>) plus the error associated with the mass of egg 2 squared (<span class="math inline">\(E^{2}_{Y}\)</span>).
 It often helps to provide a concrete example.
@@ -621,11 +622,11 @@ To avoid confusion, the general formula for multiplying or dividing errors is be
 <p><span class="math display">\[E_{Z} = Z \sqrt{\left(\frac{E_{X}}{X} \right)^{2} + \left(\frac{E_{Y}}{Y} \right)^{2}}.\]</span></p>
 <p>Note that the structure of the equation is the exact same, just with different letters used as variables.
 It is necessary to be able to apply these equations correctly to estimate combined measurement error.
-It is not necessary to understand why the equations for propagating different types of errors are different, but a derivation is provided in <a href="uncertainty_derivation.html#uncertainty_derivation">Appendix B</a> for the curious <span class="citation">(see chapter 3 of <a href="#ref-Navidi2006" role="doc-biblioref">Navidi 2006</a> for more)</span>.</p>
+It is not necessary to understand why the equations for propagating different types of errors are different, but a derivation is provided in <a href="uncertainty_derivation.html#uncertainty_derivation">Appendix B</a> for the curious <span class="citation">(see chapter 3 of <a href="#ref-Navidi2006">Navidi 2006</a> for more)</span>.</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Allie2003" class="csl-entry">
 Allie, Saalih, Andy Buffler, Bob Campbell, Fred Lubben, Dimitris Evangelinos, Dimitris Psillos, and Odysseas Valassiades. 2003. <span>“Teaching Measurement in the Introductory Physics Laboratory.”</span> <em>Physics Teacher</em> 41 (7): 394–401.
 </div>
@@ -653,42 +654,42 @@ Navidi, William Cyrus. 2006. <em>Statistics for Engineers and Scientists</em>. V
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-Statistical_Concepts.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/02-Statistical_Concepts.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

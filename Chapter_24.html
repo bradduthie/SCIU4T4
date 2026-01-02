@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 24 Analysis of variance | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 24 Analysis of variance | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2025-04-09" />
+<meta name="date" content="2026-01-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -110,6 +110,7 @@ code span.wa { font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -579,7 +580,7 @@ This is confusing, at first, because the most common application of an ANOVA is 
 That is, an ANOVA can be used to test the same null hypothesis as the independent samples Student’s t-test introduced in <a href="Chapter_22.html#independent-samples-t-test">Section 22.2</a>; are two groups sampled from a population that has the same mean?
 The t-test works fine when we have only two groups, but it does not work when there are three or more groups, and we want to know if the groups all have the same mean.
 An ANOVA can be used to test the null hypothesis that <em>all</em> groups in a dataset are sampled from a population with the same mean.
-For example, we might want to know if mean wing length is the same for five species of fig wasps sampled from the same area <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie, Abbott, and Nason 2015</a>)</span>.
+For example, we might want to know if mean wing length is the same for five species of fig wasps sampled from the same area <span class="citation">(<a href="#ref-Duthie2015b">Duthie, Abbott, and Nason 2015</a>)</span>.
 What follows is an explanation of why this can be done by looking at the variance within and between groups (note, ‘groups’ are also sometimes called ‘factors’ or ‘levels’).
 Groups are categorical data (see <a href="Chapter_5.html#Chapter_5">Chapter 5</a>).
 In the case of the fig wasp example, the groups are the different species (Table 24.1).</p>
@@ -701,7 +702,7 @@ This is relevant because the test statistic calculated in an ANOVA is called an 
 The general idea is the same as it was for the distributions introduced in <a href="Chapter_15.html#probability-distributions">Section 15.4</a>.
 For example, if we wanted to test whether or not a coin is fair, then we could flip it 10 times and compare the number of times it comes up heads to probabilities predicted by the binomial distribution when <span class="math inline">\(P(Heads) = 0.5\)</span> and <span class="math inline">\(N = 10\)</span> (see <a href="Chapter_15.html#binomial-distribution">Section 15.4.1</a> and Figure 15.5).
 To test variances, we will calculate the ratio of variances (<span class="math inline">\(F\)</span>), then compare it to the <span class="math inline">\(F\)</span> probability density function<a href="#fn56" class="footnote-ref" id="fnref56"><sup>56</sup></a>.
-For example, the ratio of the variances for two samples, 1 and 2, is <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>,</p>
+For example, the ratio of the variances for two samples, 1 and 2, is <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>,</p>
 <p><span class="math display">\[F = \frac{\mathrm{Variance}\:1}{\mathrm{Variance}\:2}.\]</span></p>
 <p>Note that if the variances of samples 1 and 2 are the exact same, then <span class="math inline">\(F = 1\)</span>.
 If the variances are very different, then <span class="math inline">\(F\)</span> is either very low (if Variance 1 &lt; Variance 2) or very high (if Variance 1 &gt; Variance 2).
@@ -733,7 +734,7 @@ The general idea is to compare the mean variance among groups to the mean varian
 <p><span class="math display">\[F = \frac{\mathrm{Mean\:variance\:among\:\:groups}}{\mathrm{Mean\:variance\:within\:\:groups}}.\]</span></p>
 <p>The rest of this section works through the details of how to calculate this F-statistic.
 It is easy to get lost in these details, but the calculations that follow do not need to be done by hand.
-As usual, jamovi will do all of this work for us <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project 2024</a>)</span>.
+As usual, jamovi will do all of this work for us <span class="citation">(<a href="#ref-Jamovi2022">The jamovi project 2024</a>)</span>.
 The reason for going through the ANOVA step-by-step process is to show how the total variation in the dataset is being partitioned into the variance among versus within groups, and to provide some conceptual understanding of what the numbers in an ANOVA output actually mean.</p>
 <div id="anova-mean-variance-among-groups" class="section level3 hasAnchor" number="24.2.1">
 <h3><span class="header-section-number">24.2.1</span> ANOVA mean variance among groups<a href="Chapter_24.html#anova-mean-variance-among-groups" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -919,7 +920,7 @@ Figure 24.3 shows the one-way ANOVA output of the test of fig wasp wing lengths 
 Figure 24.3: Jamovi output for a one-way ANOVA of wing length measurements in five species of fig wasps collected in 2010 near La Paz in Baja, Mexico.
 </p>
 </div>
-<p>Jamovi is quite minimalist for a one-way ANOVA <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project 2024</a>)</span>, but these four statistics (<span class="math inline">\(F\)</span>, <span class="math inline">\(df1\)</span>, <span class="math inline">\(df2\)</span>, and <span class="math inline">\(p\)</span>) are all that is really needed.
+<p>Jamovi is quite minimalist for a one-way ANOVA <span class="citation">(<a href="#ref-Jamovi2022">The jamovi project 2024</a>)</span>, but these four statistics (<span class="math inline">\(F\)</span>, <span class="math inline">\(df1\)</span>, <span class="math inline">\(df2\)</span>, and <span class="math inline">\(p\)</span>) are all that is really needed.
 Most statistical programs will show ANOVA output that includes the <span class="math inline">\(SS\)</span> and mean squares among (<span class="math inline">\(MS_{\mathrm{among}}\)</span>) and within (<span class="math inline">\(MS_{\mathrm{within}}\)</span>) groups.</p>
 <pre><code>Analysis of Variance Table
 
@@ -929,7 +930,7 @@ Species    4 0.36519 0.091297  3.2444 0.04176 *
 Residuals 15 0.42210 0.028140                  
 ---
 Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<p>The above output, taken from R <span class="citation">(<a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>, includes the same information as jamovi (<span class="math inline">\(F\)</span>, <span class="math inline">\(df1\)</span>, <span class="math inline">\(df2\)</span>, and <span class="math inline">\(p\)</span>), but also includes <span class="math inline">\(SS\)</span> and mean variances.
+<p>The above output, taken from R <span class="citation">(<a href="#ref-Rproject">R Core Team 2022</a>)</span>, includes the same information as jamovi (<span class="math inline">\(F\)</span>, <span class="math inline">\(df1\)</span>, <span class="math inline">\(df2\)</span>, and <span class="math inline">\(p\)</span>), but also includes <span class="math inline">\(SS\)</span> and mean variances.
 We can also get this information from jamovi if we want it (see <a href="Chapter_27.html#Chapter_27">Chapter 27</a>).</p>
 </div>
 </div>
@@ -937,7 +938,7 @@ We can also get this information from jamovi if we want it (see <a href="Chapter
 <h2><span class="header-section-number">24.3</span> Assumptions of ANOVA<a href="Chapter_24.html#assumptions-of-anova" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>As with the t-test (see <a href="Chapter_22.html#assumptions-of-t-tests">Section 22.4</a>), there are some important assumptions that we make when using an ANOVA.
 Violating these assumptions will mean that our Type I error rate (<span class="math inline">\(\alpha\)</span>) is, again, potentially misleading.
-Assumptions of ANOVA include the following <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>:</p>
+Assumptions of ANOVA include the following <span class="citation">(<a href="#ref-Box1978">Box, Hunter, and Hunter 1978</a>; <a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>:</p>
 <ol style="list-style-type: decimal">
 <li>Observations are sampled randomly</li>
 <li>Observations are independent of one another</li>
@@ -952,7 +953,7 @@ In this case, we could not attribute differences in mean wing length to species.
 The differences could instead be attributable to wasps being sampled from different trees (more on this in <a href="Chapter_27.html#Chapter_27">Chapter 27</a>).</p>
 <p>Assumption 3 is fairly self-explanatory.
 The ANOVA assumes that all of the groups in the dataset (e.g., species in the case of the fig wasp wing measurements) have the same variance, that is, we assume homogeneity of variances (as opposed to heterogeneity of variances).
-In general, ANOVA is reasonably robust to deviations from homogeneity, especially if groups have similar sample sizes <span class="citation">(<a href="#ref-Blanca2018" role="doc-biblioref">Blanca et al. 2018</a>)</span>.
+In general, ANOVA is reasonably robust to deviations from homogeneity, especially if groups have similar sample sizes <span class="citation">(<a href="#ref-Blanca2018">Blanca et al. 2018</a>)</span>.
 This means that the Type I error rate is about what we want it to be (usually <span class="math inline">\(\alpha = 0.05\)</span>), even when the assumption of homogeneity of variances is violated.
 In other words, we are not rejecting the null hypothesis when it is true more frequently than we intend!
 We can test the assumption that group variances are the same using a Levene’s test in the same way that we did for the independent samples t-test in <a href="Chapter_23.html#independent-samples-t-test-1">Chapter 23</a>.
@@ -962,11 +963,11 @@ What the assumption means is that if we were to repeatedly resample data from a 
 For the fig wasp wing measurements, this means that if we were to go back out and repeatedly collect four fig wasps from each of the five species, then sample means of species wing length and overall wing length would be normally distributed around the true means.
 Due to the central limit theorem (see <a href="Chapter_16.html#Chapter_16">Chapter 16</a>), this assumption becomes less problematic with increasing sample size.
 We can test if the sample data are normally distributed using a Q-Q plot or Shapiro-Wilk test (the same procedure used for the t-test).
-Fortunately, the ANOVA is quite robust to deviations from normality <span class="citation">(<a href="#ref-Schmider2010" role="doc-biblioref">Schmider et al. 2010</a>)</span>, but if data are not normally distributed, we should again consider a non-parametric alternative test such as the Kruskal-Wallis H test (see <a href="Chapter_26.html#Chapter_26">Chapter 26</a>).</p>
+Fortunately, the ANOVA is quite robust to deviations from normality <span class="citation">(<a href="#ref-Schmider2010">Schmider et al. 2010</a>)</span>, but if data are not normally distributed, we should again consider a non-parametric alternative test such as the Kruskal-Wallis H test (see <a href="Chapter_26.html#Chapter_26">Chapter 26</a>).</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Blanca2018" class="csl-entry">
 Blanca, María J., Rafael Alarcón, Jaume Arnau, Roser Bono, and Rebecca Bendayan. 2018. <span>“<span class="nocase">Effect of variance ratio on ANOVA robustness: Might 1.5 be the limit?</span>”</span> <em>Behavior Research Methods</em> 50 (3): 937–62. <a href="https://doi.org/10.3758/s13428-017-0918-2">https://doi.org/10.3758/s13428-017-0918-2</a>.
 </div>
@@ -997,9 +998,9 @@ The jamovi project. 2024. <span>“Jamovi (Version 2.5).”</span> Sydney, Austr
 <ol start="54">
 <li id="fn54"><p>Technically polynomially, but the distinction really is not important for understanding the concept. In general, the number of possible comparisons between groups is described by a binomial coefficient, <span class="math display">\[\binom{g}{2} = \frac{g!}{2\left(g - 2 \right)!}.\]</span> The number of combinations therefore increases with increasing group number (g).<a href="Chapter_24.html#fnref54" class="footnote-back">↩︎</a></p></li>
 <li id="fn55"><p>To get the 0.4, we can first calculate the probability that we (correctly) do not reject <span class="math inline">\(H_{0}\)</span> for all 10 pair-wise species combinations <span class="math inline">\((1 - 0.05)^{10} \approx 0.60\)</span>, then subtract from 1, <span class="math inline">\(P(Reject\:H_{0}) = 1 - (1 - 0.05)^{10} \approx 0.4\)</span>. That is, we find the probability of there not being a Type I error in the first test <span class="math inline">\((1 - 0.05)\)</span>, <strong>and</strong> the second test <span class="math inline">\((1 - 0.05)\)</span>, and so forth, thereby multiplying <span class="math inline">\((1 - 0.05)\)</span> by itself 10 times. This gives the probability of not committing any Type I error across all 10 tests, so the probability that we commit at least one Type I error is 1 minus this probability.<a href="Chapter_24.html#fnref55" class="footnote-back">↩︎</a></p></li>
-<li id="fn56"><p>The F-distribution was originally discovered in the context of the ratio of random variables with Chi-square distributions, with each variable being divided by its own degree of freedom <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>. We will look at the Chi-square distribution in <a href="Chapter_29.html#Chapter_29">Chapter 29</a>.<a href="Chapter_24.html#fnref56" class="footnote-back">↩︎</a></p></li>
+<li id="fn56"><p>The F-distribution was originally discovered in the context of the ratio of random variables with Chi-square distributions, with each variable being divided by its own degree of freedom <span class="citation">(<a href="#ref-Miller2004">Miller and Miller 2004</a>)</span>. We will look at the Chi-square distribution in <a href="Chapter_29.html#Chapter_29">Chapter 29</a>.<a href="Chapter_24.html#fnref56" class="footnote-back">↩︎</a></p></li>
 <li id="fn57"><p><a href="https://bradduthie.github.io/stats/app/f_distribution/" class="uri">https://bradduthie.github.io/stats/app/f_distribution/</a><a href="Chapter_24.html#fnref57" class="footnote-back">↩︎</a></p></li>
-<li id="fn58"><p>Note that the <span class="math inline">\(SS\)</span> divided by the degrees of freedom (<span class="math inline">\(N - 1\)</span>) is a variance. For technical reasons <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, we cannot simply calculate the mean variance of groups (i.e., the mean of <span class="math inline">\(s^{2}_{\mathrm{Het1}}\)</span>, <span class="math inline">\(s^{2}_{\mathrm{Het2}}\)</span>, etc.). We need to sum up all the squared deviations from group means <em>before</em> dividing by the relevant degrees of freedom (i.e., dfs for the among and within group variation).<a href="Chapter_24.html#fnref58" class="footnote-back">↩︎</a></p></li>
+<li id="fn58"><p>Note that the <span class="math inline">\(SS\)</span> divided by the degrees of freedom (<span class="math inline">\(N - 1\)</span>) is a variance. For technical reasons <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>, we cannot simply calculate the mean variance of groups (i.e., the mean of <span class="math inline">\(s^{2}_{\mathrm{Het1}}\)</span>, <span class="math inline">\(s^{2}_{\mathrm{Het2}}\)</span>, etc.). We need to sum up all the squared deviations from group means <em>before</em> dividing by the relevant degrees of freedom (i.e., dfs for the among and within group variation).<a href="Chapter_24.html#fnref58" class="footnote-back">↩︎</a></p></li>
 <li id="fn59"><p>In this case, weighing by sample size is not so important because each species has the same number of samples. But when different groups have different numbers of samples, we need to multiply by sample number so that each group contributes proportionally to the SS.<a href="Chapter_24.html#fnref59" class="footnote-back">↩︎</a></p></li>
 <li id="fn60"><p>Note that <span class="math inline">\(df_{\mathrm{among}} = 4\)</span> and <span class="math inline">\(df_{\mathrm{within}} = 15\)</span> sum to 19, which is the total df of the entire dataset (<span class="math inline">\(N - 1 = 20 - 1 = 19\)</span>). This is always the case for the ANOVA; the overall df constrains the degrees of freedom among and within groups.<a href="Chapter_24.html#fnref60" class="footnote-back">↩︎</a></p></li>
 </ol>
@@ -1024,42 +1025,42 @@ The jamovi project. 2024. <span>“Jamovi (Version 2.5).”</span> Sydney, Austr
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/08-ANOVA.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/08-ANOVA.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

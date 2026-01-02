@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 26 Kruskal-Wallis H test | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 26 Kruskal-Wallis H test | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2025-04-09" />
+<meta name="date" content="2026-01-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -110,6 +110,7 @@ code span.wa { font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -575,7 +576,7 @@ div.csl-indent {
 <div id="Chapter_26" class="section level1 hasAnchor" number="26">
 <h1><span class="header-section-number">Chapter 26</span> Kruskal-Wallis H test<a href="Chapter_26.html#Chapter_26" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>If the assumptions of the one-way ANOVA are violated, then we can consider using a Kruskal-Wallis test.
-The Kruskal-Wallis test is essentially an extension of the Mann-Whitney U test from <a href="Chapter_22.html#mann-whitney-u-test">Section 22.5.2</a> for samples with more than two groups <span class="citation">(<a href="#ref-Kruskal1952" role="doc-biblioref">William H. Kruskal and Wallis 1952</a>)</span>.
+The Kruskal-Wallis test is essentially an extension of the Mann-Whitney U test from <a href="Chapter_22.html#mann-whitney-u-test">Section 22.5.2</a> for samples with more than two groups <span class="citation">(<a href="#ref-Kruskal1952">William H. Kruskal and Wallis 1952</a>)</span>.
 Like the Mann-Whitney U test, it uses the <em>ranks</em> of values instead of the actual values in the dataset.
 The idea is to rank all values in the dataset, ignoring group, then calculate a test statistic (<span class="math inline">\(H\)</span>) that increases as the difference among group ranks increases, relative to the difference within group ranks.
 We can again use the example of the fig wasp wing lengths introduced in <a href="Chapter_24.html#Chapter_24">Chapter 24</a>.
@@ -687,17 +688,17 @@ There are 20 total values, so we rank them from 1 to 20 (Table 26.2).</p>
 </table>
 <p>From these ranks, we calculate a test statistic <span class="math inline">\(H\)</span> from the overall sample size (N), the sample size (<span class="math inline">\(N_{i}\)</span>) of each of the groups (<span class="math inline">\(g\)</span>), the mean of group ranks (<span class="math inline">\(\bar{R}_{i}\)</span>), and the overall mean rank (<span class="math inline">\(\bar{\bar R}\)</span>).
 Of course, we do not need to do this by hand.
-But the formula shows how a statistical program will do the calculation <span class="citation">(<a href="#ref-Kruskal1952a" role="doc-biblioref">William H. Kruskal 1952</a>)</span>,</p>
+But the formula shows how a statistical program will do the calculation <span class="citation">(<a href="#ref-Kruskal1952a">William H. Kruskal 1952</a>)</span>,</p>
 <p><span class="math display">\[H = (N - 1) \frac{\sum_{i=1}^{g}N_{i}\left(\bar{R}_{i} - \bar{\bar R} \right)^2}{\sum_{i=1}^{g}\sum_{j=1}^{N_{i}} \left(R_{ij} - \bar{\bar R} \right)^{2}}.\]</span></p>
 <p>For our purposes, the mathematical details are not important.
 The equation is included here only to show the similarity between the calculation of <span class="math inline">\(H\)</span> versus <span class="math inline">\(F\)</span> from <a href="Chapter_24.html#one-way-anova">Section 24.2</a>.
 In the numerator of the equation for <span class="math inline">\(H\)</span>, we are calculating the squared deviation of mean group ranks from the overall mean rank <span class="math inline">\((\bar{R}_{i} - \bar{\bar R})^2\)</span>, as weighted by the group sample size <span class="math inline">\(N_{i}\)</span>.
 We are then dividing by the sum of squared deviations of all ranks (<span class="math inline">\(R_{ij}\)</span>) from the overall mean rank <span class="math inline">\(\bar{\bar R}\)</span>.
 All of this gets multiplied by <span class="math inline">\(N - 1\)</span> to give the test statistic <span class="math inline">\(H\)</span>.
-We can then compare <span class="math inline">\(H\)</span> to a suitable null distribution, which might be calculated precisely using a specific algorithm <span class="citation">(e.g., <a href="#ref-Choi2003" role="doc-biblioref">Choi et al. 2003</a>)</span>.
-But most statistical programs such as jamovi compare <span class="math inline">\(H\)</span> to a Chi-square distribution (see <a href="Chapter_29.html#Chapter_29">Chapter 29</a>), which is an effective approximation <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>.</p>
+We can then compare <span class="math inline">\(H\)</span> to a suitable null distribution, which might be calculated precisely using a specific algorithm <span class="citation">(e.g., <a href="#ref-Choi2003">Choi et al. 2003</a>)</span>.
+But most statistical programs such as jamovi compare <span class="math inline">\(H\)</span> to a Chi-square distribution (see <a href="Chapter_29.html#Chapter_29">Chapter 29</a>), which is an effective approximation <span class="citation">(<a href="#ref-Miller2004">Miller and Miller 2004</a>)</span>.</p>
 <p>The output of a Kruskal-Wallis H test is quite minimal and easy to read.
-Jamovi reports a Chi-square (<span class="math inline">\(\chi^{2}\)</span>) test statistic, degrees of freedom, and p-value <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project 2024</a>)</span>.
+Jamovi reports a Chi-square (<span class="math inline">\(\chi^{2}\)</span>) test statistic, degrees of freedom, and p-value <span class="citation">(<a href="#ref-Jamovi2022">The jamovi project 2024</a>)</span>.
 Figure 26.1 shows the output of a Kruskal-Wallis H test on the fig wasp wing lengths data.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-106"></span>
 <img src="img/jamovi_kruskall-wallis_test.png" alt="Jamovi output is shown with a small table that includes 1 row and 3 statistics from a Kruskal-Wallis H test." width="100%" />
@@ -711,7 +712,7 @@ The Kruskal-Wallis H test does not assume that group variances are the same, unl
 Since we know that the homogeneity of variances assumption is violated for the fig wasp data, it is probably best to be cautious and conclude that there is no evidence that mean wing lengths differ among species.</p>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Choi2003" class="csl-entry">
 Choi, Won, Jae Won Lee, Myung Hoe Huh, and Seung Ho Kang. 2003. <span>“<span class="nocase">An algorithm for computing the exact distribution of the Kruskal-Wallis test</span>.”</span> <em>Communications in Statistics Part B: Simulation and Computation</em> 32 (4): 1029–40. <a href="https://doi.org/10.1081/SAC-120023876">https://doi.org/10.1081/SAC-120023876</a>.
 </div>
@@ -748,42 +749,42 @@ The jamovi project. 2024. <span>“Jamovi (Version 2.5).”</span> Sydney, Austr
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/08-ANOVA.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/08-ANOVA.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

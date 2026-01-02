@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 25 Multiple comparisons | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 25 Multiple comparisons | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2025-04-09" />
+<meta name="date" content="2026-01-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -110,6 +110,7 @@ code span.wa { font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -582,13 +583,13 @@ Nevertheless, we need some way to correct for the Type I error problem explained
 That is, if we run a large enough number of t-tests, then we are almost guaranteed that we will find a significant difference between means (<span class="math inline">\(P &lt; 0.05\)</span>) where none really exists.
 A way to avoid this inflated Type I error rate is to set our significance threshold to be lower than the usual <span class="math inline">\(\alpha = 0.05\)</span>.
 We can, for example, divide our <span class="math inline">\(\alpha\)</span> value by the total number of pair-wise t-tests that we run.
-This is called a Bonferroni correction <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>)</span>, and it is an especially cautious approach to post hoc comparisons between groups <span class="citation">(<a href="#ref-Narum2006" role="doc-biblioref">Narum 2006</a>)</span>.
+This is called a Bonferroni correction <span class="citation">(<a href="#ref-Dytham2011">Dytham 2011</a>)</span>, and it is an especially cautious approach to post hoc comparisons between groups <span class="citation">(<a href="#ref-Narum2006">Narum 2006</a>)</span>.
 For the fig wasp wing lengths, recall that there are 10 possible pairwise comparisons between the five species.
 This means that if we were to apply a Bonferroni correction and run 10 separate t-tests, then we would only conclude that species mean wing lengths were different when <span class="math inline">\(P &lt; 0.005\)</span> instead of <span class="math inline">\(P &lt; 0.05\)</span>.</p>
 <p>Another approach to correcting for multiple comparisons is a Tukey’s honestly significant difference test (Tukey’s HSD, or just a ‘Tukey test’).
 The general idea of a Tukey test is the same as the Bonferroni.
 Multiple t-tests are run in a way that controls the Type I error rate so that the probability of making a Type I error across the whole set of comparisons is fixed (e.g., at <span class="math inline">\(\alpha = 0.05\)</span>).
-The Tukey test does this by using a modified t-test, with a t-distribution called the ‘studentised range distribution’ that applies the range of mean group values (i.e., <span class="math inline">\(\max(\bar{x}) - \min(\bar{x})\)</span>) and uses the sample variance across the groups with the highest and lowest sample means <span class="citation">(<a href="#ref-Tukey1949" role="doc-biblioref">Tukey 1949</a>; <a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>)</span>.</p>
+The Tukey test does this by using a modified t-test, with a t-distribution called the ‘studentised range distribution’ that applies the range of mean group values (i.e., <span class="math inline">\(\max(\bar{x}) - \min(\bar{x})\)</span>) and uses the sample variance across the groups with the highest and lowest sample means <span class="citation">(<a href="#ref-Tukey1949">Tukey 1949</a>; <a href="#ref-Box1978">Box, Hunter, and Hunter 1978</a>)</span>.</p>
 <p>Multiple comparisons tests can be run automatically in jamovi.
 Figure 25.1 shows a post hoc comparisons table for all pair-wise combinations of fig wasp species wing length means.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-103"></span>
@@ -609,7 +610,7 @@ The ANOVA also has more statistical power because it makes use of all 20 measure
 It is therefore not particularly surprising or concerning that we rejected <span class="math inline">\(H_{0}\)</span> for the ANOVA, but the multiple comparisons tests failed to find any significant difference between group means.</p>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Box1978" class="csl-entry">
 Box, G E P, W G Hunter, and S J Hunter. 1978. <em><span class="nocase">Statistics for Experimenters: An Introduction to Design, Data Analysis, and Model Building</span></em>. John Wiley &amp; Sons, New York, USA.
 </div>
@@ -643,42 +644,42 @@ Tukey, John W. 1949. <span>“<span class="nocase">Comparing individual means in
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/08-ANOVA.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/08-ANOVA.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

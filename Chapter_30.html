@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 30 Correlation | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 30 Correlation | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2025-04-09" />
+<meta name="date" content="2026-01-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -110,6 +110,7 @@ code span.wa { font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -594,7 +595,7 @@ Figure 30.1: Fig wasps from two different species, (A) Het1 and (B) Het2. Wasps 
 </div>
 <p>Both fig wasp species in Figure 30.1 are unnamed.
 We can call the species in Figure 30.1A ‘Het1’ and the species in Figure 30.1B ‘Het2’.
-We might want to collect morphological measurements of fig wasp head, thorax, and abdomen lengths in these two species <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie, Abbott, and Nason 2015</a>)</span>.
+We might want to collect morphological measurements of fig wasp head, thorax, and abdomen lengths in these two species <span class="citation">(<a href="#ref-Duthie2015b">Duthie, Abbott, and Nason 2015</a>)</span>.
 Table 30.1 shows these measurements for 11 wasps.</p>
 <table style="width:51%;">
 <caption><strong>TABLE 30.1</strong> Body segment length measurements (mm) from fig wasps of two species. Data were collected from Baja, Mexico.</caption>
@@ -746,8 +747,8 @@ Since the covariance between <span class="math inline">\(x\)</span> and itself i
 <p>This looks like a lot, but we can clean the equation up a bit because the <span class="math inline">\(1 / (N-1)\)</span> expressions cancel on the top and bottom of the equation,</p>
 <p><span class="math display">\[r = \frac{\sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right) \left(y_{i} - \bar{y} \right)}{\sqrt{\sum_{i = 1}^{N}\left(x_{i} - \bar{x} \right)^{2}} \sqrt{\sum_{i = 1}^{N}\left(y_{i} - \bar{y} \right)^{2}}}.\]</span></p>
 <p>As with other statistics defined in this book, it is almost never necessary to calculate <span class="math inline">\(r\)</span> by hand.
-Jamovi will make these calculations for us <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project 2024</a>)</span>.
-The reason for working through all of these equations is to help make the conceptual link between <span class="math inline">\(r\)</span> and the variance of the variables of interest <span class="citation">(<a href="#ref-Rodgers1988" role="doc-biblioref">Rodgers and Nicewander 1988</a>)</span>.
+Jamovi will make these calculations for us <span class="citation">(<a href="#ref-Jamovi2022">The jamovi project 2024</a>)</span>.
+The reason for working through all of these equations is to help make the conceptual link between <span class="math inline">\(r\)</span> and the variance of the variables of interest <span class="citation">(<a href="#ref-Rodgers1988">Rodgers and Nicewander 1988</a>)</span>.
 To make this link a bit clearer, we can calculate the correlation coefficient of thorax and abdomen length from Table 30.1.
 We can set thorax to be the <span class="math inline">\(x\)</span> variable and abdomen to be the <span class="math inline">\(y\)</span> variable.
 Mean thorax length is <span class="math inline">\(\bar{x} = 0.770\)</span>, and mean abdomen length is <span class="math inline">\(\bar{y} = 1.210\)</span>.
@@ -988,7 +989,7 @@ We could also use a one-tailed test if our <span class="math inline">\(H_{A}\)</
 As it turns out, the sample correlation coefficient (<span class="math inline">\(r\)</span>) will be approximately t-distributed around a true correlation (<span class="math inline">\(\rho\)</span>) with a t-score defined by <span class="math inline">\(r - \rho\)</span> divided by its standard error (<span class="math inline">\(\mathrm{SE}(r)\)</span>)<a href="#fn72" class="footnote-ref" id="fnref72"><sup>72</sup></a>,</p>
 <p><span class="math display">\[t = \frac{r - \rho}{\mathrm{SE}(r)}.\]</span></p>
 <p>Since our null hypothesis is that variables are uncorrelated, <span class="math inline">\(\rho = 0\)</span>.
-Jamovi will use this equation to test whether or not the correlation coefficient is significantly different from zero <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project 2024</a>)</span>.
+Jamovi will use this equation to test whether or not the correlation coefficient is significantly different from zero <span class="citation">(<a href="#ref-Jamovi2022">The jamovi project 2024</a>)</span>.
 The reason for presenting it here is to show the conceptual link to other hypothesis tests in earlier chapters.
 In <a href="Chapter_22.html#one-sample-t-test">Section 22.1</a>, we saw that the one sample t-test defined <span class="math inline">\(t\)</span> as the deviation of the sample mean from the true mean, divided by the standard error.
 Here we are doing the same for the correlation coefficient.
@@ -1011,7 +1012,7 @@ Since our p-value is less than 0.05, we can reject the null hypothesis that fig 
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Duthie2015b" class="csl-entry">
 Duthie, A Bradley, Karen C Abbott, and John D Nason. 2015. <span>“<span class="nocase">Trade-offs and coexistence in fluctuating environments: evidence for a key dispersal-fecundity trade-off in five nonpollinating fig wasps</span>.”</span> <em>American Naturalist</em> 186 (1): 151–58. <a href="https://doi.org/10.1086/681621">https://doi.org/10.1086/681621</a>.
 </div>
@@ -1030,7 +1031,7 @@ The jamovi project. 2024. <span>“Jamovi (Version 2.5).”</span> Sydney, Austr
 <ol start="70">
 <li id="fn70"><p>Note that <span class="math inline">\(r\)</span> is the sample correlation coefficient, which is an estimate of the population correlation coefficient. The population correlation coefficient is represented by the Greek letter ‘<span class="math inline">\(\rho\)</span>’ (‘rho’), and sometimes the sample correlation coefficient is represented as <span class="math inline">\(\hat{\rho}\)</span>.<a href="Chapter_30.html#fnref70" class="footnote-back">↩︎</a></p></li>
 <li id="fn71"><p>We can usually just call this the ‘correlation coefficient’.<a href="Chapter_30.html#fnref71" class="footnote-back">↩︎</a></p></li>
-<li id="fn72"><p>We can calculate the standard error of <span class="math inline">\(r\)</span> as <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman 1968</a>)</span>, <span class="math display">\[\mathrm{SE}(r) = \sqrt{\frac{1 - r^{2}}{N - 2}}.\]</span> But this is not necessary to ever do by hand. Note that we lose two degrees of freedom (<span class="math inline">\(N - 2\)</span>), one for calculating each variable mean.<a href="Chapter_30.html#fnref72" class="footnote-back">↩︎</a></p></li>
+<li id="fn72"><p>We can calculate the standard error of <span class="math inline">\(r\)</span> as <span class="citation">(<a href="#ref-Rahman1968">Rahman 1968</a>)</span>, <span class="math display">\[\mathrm{SE}(r) = \sqrt{\frac{1 - r^{2}}{N - 2}}.\]</span> But this is not necessary to ever do by hand. Note that we lose two degrees of freedom (<span class="math inline">\(N - 2\)</span>), one for calculating each variable mean.<a href="Chapter_30.html#fnref72" class="footnote-back">↩︎</a></p></li>
 <li id="fn73"><p><a href="https://bradduthie.github.io/stats/app/corr_click/" class="uri">https://bradduthie.github.io/stats/app/corr_click/</a><a href="Chapter_30.html#fnref73" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
@@ -1054,42 +1055,42 @@ The jamovi project. 2024. <span>“Jamovi (Version 2.5).”</span> Sydney, Austr
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/09-Correlation.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/09-Correlation.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

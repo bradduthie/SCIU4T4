@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 9 Decimal places, significant figures, and rounding | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 9 Decimal places, significant figures, and rounding | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2025-04-09" />
+<meta name="date" content="2026-01-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -110,6 +110,7 @@ code span.wa { font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -582,12 +583,12 @@ This chapter focuses on correctly interpreting the decimal places and significan
 <p>A higher number of digits communicates a greater level of accuracy.
 For example, the number 2.718 expresses a higher precision than 2.7 does.
 Reporting 2.718 implies that we know the value is somewhere between 2.7175 and 2.1785.
-But reporting 2.7 only implies that we know the value is somewhere between 2.65 and 2.75 <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+But reporting 2.7 only implies that we know the value is somewhere between 2.65 and 2.75 <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>.
 These numbers therefore have a different number of <em>decimal places</em> and a different number of <em>significant figures</em>.
 Decimal places and significant figures are related, but not the same.</p>
 <p><strong>Decimal places</strong> are conceptually easier to understand. These are just the number of digits to the right of the decimal point. For example, 2.718 has 3 decimal places, and 2.7 has 1 decimal place.</p>
 <p><strong>Significant figures</strong> are a bit more challenging.
-These are the number of digits that you need to infer the accuracy of a value <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman 1968</a>)</span>.
+These are the number of digits that you need to infer the accuracy of a value <span class="citation">(<a href="#ref-Rahman1968">Rahman 1968</a>)</span>.
 For example, the number 2.718 has 4 significant figures and 2.7 has 2 significant figures. This sounds straightforward, but it can get confusing when numbers start or end with zeros.
 For example, the number 0.045 has only 2 significant figures because the first two zeros only serve as placeholders (note that if this were a measurement of 0.045 m, then we could express the exact same value as 45 mm, so the zeros are not really necessary to indicate measurement accuracy).
 In contrast, the measurement 0.045000 has 5 significant figures because the last 3 zeros indicate a higher degree of accuracy than just 0.045 would (i.e., we know the value is somewhere between 0.044995 and 0.045005, not just 0.0445 and 0.0455).
@@ -642,7 +643,7 @@ Make sure you are confident that you can report numbers to a given number of dec
 <h2><span class="header-section-number">9.2</span> Rounding<a href="Chapter_9.html#rounding" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Often if you want to report a number to a specific number of decimals or significant figures, you will need to round the number.
 Rounding reduces the number of significant figures in a number, which might be necessary if a number that we calculate has more significant figures than we are justified in expressing.
-There are different rules for rounding numbers, but this book will follow <span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span>.
+There are different rules for rounding numbers, but this book will follow <span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995">1995</a>)</span>.
 When rounding to the nearest decimal, the last decimal written should not be changed if the number that immediately follows is 0, 1, 2, 3, or 4.
 If the number that immediately follows is 5, 6, 7, 8, or 9, then the last decimal written should be increased by 1.</p>
 <p>For example, if we wanted to round the number 3.141593 to 2 significant figures, then we would write it as 3.1 because the digit that immediately follows (i.e., the third digit) is 4.
@@ -696,7 +697,7 @@ If we wanted to round 1253 to 3 significant figures, then we would round by writ
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Rahman1968" class="csl-entry">
 Rahman, N A. 1968. <em><span class="nocase">A Course in Theoretical Statistics</span></em>. Charles Griffin &amp; Company, London.
 </div>
@@ -724,42 +725,42 @@ Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-Summary_statistics.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/03-Summary_statistics.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

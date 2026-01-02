@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 4 Populations and samples | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 4 Populations and samples | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2025-04-09" />
+<meta name="date" content="2026-01-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -110,6 +110,7 @@ code span.wa { font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -582,7 +583,7 @@ We cannot measure everything, so we need to collect a <em>sample</em> of data an
 For example, while we probably cannot measure the height of every tree in a forest, nor can we measure the concentration of carbon at every possible location in the forest’s soil, we can collect a smaller number of measurements and still make useful conclusions about overall forest tree height and carbon concentration.</p>
 <p>Statistics thereby allows us to approximate properties of entire populations from a limited number of samples.
 This needs to be done with caution, but before getting into the details of how, it is important to fully understand the difference between a <strong>population</strong> and a <strong>sample</strong> to avoid confusing these two concepts.
-A <strong>population</strong> is the entire set of possible observations that could be collected <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+A <strong>population</strong> is the entire set of possible observations that could be collected <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>.
 Some examples will make it easier to understand:</p>
 <ul>
 <li>All of the birch trees in Scotland</li>
@@ -591,7 +592,7 @@ Some examples will make it easier to understand:</p>
 </ul>
 <p>These populations might be important for a particular research question.
 For example, we might want to know something about the feeding behaviours of wrens in the UK.
-But there is no way that we can find and observe the behaviour of every single wren, so we need to take a subset of the population (sample) instead <span class="citation">(<a href="#ref-Fowler1998" role="doc-biblioref">Fowler, Cohen, and Jarvis 1998</a>)</span>.
+But there is no way that we can find and observe the behaviour of every single wren, so we need to take a subset of the population (sample) instead <span class="citation">(<a href="#ref-Fowler1998">Fowler, Cohen, and Jarvis 1998</a>)</span>.
 Examples of samples include the following:</p>
 <ul>
 <li>25 birch trees from a Scottish forest</li>
@@ -601,11 +602,11 @@ Examples of samples include the following:</p>
 <p>It is important to recognise that the word ‘population’ means something different in statistics than it does in biology.
 A biological population, for example, could be defined as all of the individuals of the same species in the same general location.
 A statistical population, in contrast, refers to a set of observations (i.e., things that we can measure).
-<span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995" role="doc-biblioref">1995</a>)</span> provide a more technical definition for ‘population’,</p>
+<span class="citation">Sokal and Rohlf (<a href="#ref-Sokal1995">1995</a>)</span> provide a more technical definition for ‘population’,</p>
 <blockquote>
 <p>In statistics, population always means the <em>totality of individual observations about which inferences are to be made, existing anywhere in the world or at least within a definitely specified sampling area limited in space and time</em> [p. 9, emphasis theirs].</p>
 </blockquote>
-<p>They define a sample to be ‘a collection of individual observations selected by a specified procedure’ <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+<p>They define a sample to be ‘a collection of individual observations selected by a specified procedure’ <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>.
 For our purposes, it is not necessary to be able to recite the technical definitions, but it is important to understand the relationship between a population and a sample.
 When we collect data, we are almost always taking a small sample of observations from a much larger number of possible observations in a population (Figure 4.1).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-22"></span>
@@ -616,7 +617,7 @@ Figure 4.1: Conceptual figure illustrating how a statistical population relates 
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Fowler1998" class="csl-entry">
 Fowler, Jim, Lou Cohen, and Phil Jarvis. 1998. <em><span class="nocase">Practical Statistics for Field Biology</span></em>. 2nd ed. Chichester, UK: John Wiley &amp; Sons.
 </div>
@@ -644,42 +645,42 @@ Sokal, Robert R, and F James Rohlf. 1995. <em><span>Biometry</span></em>. 3rd ed
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-Statistical_Concepts.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/02-Statistical_Concepts.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

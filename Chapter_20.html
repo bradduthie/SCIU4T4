@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 20 Practical. z- and t-intervals | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 20 Practical. z- and t-intervals | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2025-04-09" />
+<meta name="date" content="2026-01-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -110,6 +110,7 @@ code span.wa { font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -574,12 +575,12 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_20" class="section level1 hasAnchor" number="20">
 <h1><span class="header-section-number">Chapter 20</span> <em>Practical</em>. z- and t-intervals<a href="Chapter_20.html#Chapter_20" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This chapter focuses on applying the concepts from <a href="Chapter_18.html#Chapter_18">Chapter 18</a> and <a href="Chapter_19.html#Chapter_19">Chapter 19</a> in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project 2024</a>)</span>.
+<p>This chapter focuses on applying the concepts from <a href="Chapter_18.html#Chapter_18">Chapter 18</a> and <a href="Chapter_19.html#Chapter_19">Chapter 19</a> in jamovi <span class="citation">(<a href="#ref-Jamovi2022">The jamovi project 2024</a>)</span>.
 Specifically, we will practice calculating confidence intervals (CIs).
 There will be four exercises focused on calculating CIs in jamovi.
 To complete the first two exercises, you will need the distrACTION module in jamovi.
 If you need to download it again, the instructions to do this are in the second exercise of <a href="Chapter_17.html#Chapter_17">Chapter 17</a> (briefly, go to the Modules option and select ‘jamovi library’, then scroll down until you find the ‘distraACTION’ module).</p>
-<p>The data for this chapter are inspired by ongoing work in the Woodland Creation and Ecological Networks (WrEN) project <span class="citation">(<a href="#ref-Fuentes-Montemayor2022" role="doc-biblioref">Fuentes-Montemayor, Park, et al. 2022</a>; <a href="#ref-Fuentes-Montemayor2022a" role="doc-biblioref">Fuentes-Montemayor, Watts, et al. 2022</a>)</span>.
+<p>The data for this chapter are inspired by ongoing work in the Woodland Creation and Ecological Networks (WrEN) project <span class="citation">(<a href="#ref-Fuentes-Montemayor2022">Fuentes-Montemayor, Park, et al. 2022</a>; <a href="#ref-Fuentes-Montemayor2022a">Fuentes-Montemayor, Watts, et al. 2022</a>)</span>.
 The WrEN project is led by a collaboration between University of Stirling researchers Dr Elisa Fuentes-Montemayor and Prof Kirsty Park, and at Forest Research, Prof Kevin Watts (<a href="https://www.wren-project.com/">https://www.wren-project.com/</a>).
 It focuses on questions about what kinds of conservation actions should be prioritised to restore degraded ecological networks.
 The WrEN project encompasses a huge amount of work and data collection from hundreds of surveyed secondary or ancient woodland sites.
@@ -907,7 +908,7 @@ There is no right or wrong answer here, but CIs are very challenging to understa
 
 
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Fuentes-Montemayor2022" class="csl-entry">
 Fuentes-Montemayor, Elisa, Kirsty J Park, Kypfer Cordts, and Kevin Watts. 2022. <span>“<span class="nocase">The long-term development of temperate woodland creation sites: from tree saplings to mature woodlands</span>.”</span> <em>Forestry</em> 95: 28–37. <a href="https://doi.org/10.1093/forestry/cpab027">https://doi.org/10.1093/forestry/cpab027</a>.
 </div>
@@ -945,42 +946,42 @@ The jamovi project. 2024. <span>“Jamovi (Version 2.5).”</span> Sydney, Austr
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/05-Statistical_Inference.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/05-Statistical_Inference.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

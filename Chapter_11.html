@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 11 Measures of central tendency | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 11 Measures of central tendency | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2025-04-09" />
+<meta name="date" content="2026-01-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -110,6 +110,7 @@ code span.wa { font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -593,7 +594,7 @@ Figure 11.1 shows the same histogram of fig fruit widths shown in Figure 10.1, b
 Figure 11.1: Example histogram fig fruit width (cm) using data from 78 fig fruits collected in 2010 from Baja, Mexico. The mean of the distribution is indicated with an arrow.
 </p>
 </div>
-<p>The mean is calculated by adding up the values of all of the data and dividing this sum by the total number of data <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+<p>The mean is calculated by adding up the values of all of the data and dividing this sum by the total number of data <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>.
 This is a fairly straightforward calculation, so we can use the mean as an example to demonstrate some new mathematical notation that will be used throughout the book.
 We will start with a concrete example with actual numbers, then end with a more abstract equation describing how any sample mean is calculated.
 The notation might be a bit confusing at first, but learning it will make understanding statistical concepts easier later in the book.
@@ -602,7 +603,7 @@ We start with the following eight values.</p>
 <pre><code>4.2, 5.0, 3.1, 4.2, 3.8, 4.6, 4.0, 3.5</code></pre>
 <p>To calculate the mean of a sample, we just need to add up all of the values and divide by 8 (the total number of values),</p>
 <p><span class="math display">\[\bar{x} = \frac{4.2 + 5.0 + 3.1 + 4.2 + 3.8 + 4.6 + 4.0 + 3.5}{8}.\]</span></p>
-<p>Note that I have used the symbol <span class="math inline">\(\bar{x}\)</span> to represent the mean of <span class="math inline">\(x\)</span>, which is a common notation <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+<p>Note that I have used the symbol <span class="math inline">\(\bar{x}\)</span> to represent the mean of <span class="math inline">\(x\)</span>, which is a common notation <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>.
 In the example above, <span class="math inline">\(\bar{x} = 4.05\)</span>.</p>
 <p>Writing the full calculation above is not a problem because we only have 8 points of data.
 But sample sizes are often much larger than 8.
@@ -687,7 +688,7 @@ As a simple example, we can again consider the sample dataset of 8 values.</p>
 But the value 4.2 appears twice, once in the first position and once in the fourth position.
 Because 4.2 appears most frequently in the dataset, it is the mode of the dataset.</p>
 <p>Note that it is possible for a dataset to have more than one mode.
-Also, somewhat confusingly, distributions that have more than one peak are often described as multimodal, even if the peaks are not of the same height <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+Also, somewhat confusingly, distributions that have more than one peak are often described as multimodal, even if the peaks are not of the same height <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>.
 For example, the histogram in Figure 11.2 might be described as bimodal because it has two distinct peaks (one around 10 and the other around 14), even though these peaks are not the same size.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-39"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-39-1.png" alt="An example histogram is shown with a bimodal shape." width="100%" />
@@ -696,12 +697,12 @@ Figure 11.2: Example histogram of a hypothetical dataset that has a bimodal dist
 </p>
 </div>
 <p>In very rare cases, data might have a U-shape.
-The lowest point of the U would then be described as the antimode <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.</p>
+The lowest point of the U would then be described as the antimode <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>.</p>
 </div>
 <div id="the-median-and-quantiles" class="section level2 hasAnchor" number="11.3">
 <h2><span class="header-section-number">11.3</span> The median and quantiles<a href="Chapter_11.html#the-median-and-quantiles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The median of a dataset is the middle value when the data are sorted.
-More technically, the median is defined as the value that has the same number of lower and higher values than it <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+More technically, the median is defined as the value that has the same number of lower and higher values than it <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>.
 If there is an odd number of values in the dataset, then finding the median is often easy.
 For example, the median of the values {8, 5, 3, 2, 6} is 5.
 This is because if we sort the values from lowest to highest (2, 3, 5, 6, 8), the value 5 is exactly in the middle.
@@ -725,20 +726,20 @@ For example, for the values {1, 3, 4, 8, 9}, the value 3 is the first quartile a
 <p>In some cases, it is not always this clear.
 We can show how quantiles get more complicated using the same 8 values as above where the first quartile is somewhere between 3.5 and 3.8.</p>
 <pre><code>3.1, 3.5, 3.8, 4.0, 4.2, 4.2, 4.6, 5.0</code></pre>
-<p>There are at least nine different ways to calculate the first quartile in this case, and different statistical software packages will sometimes use different default methods <span class="citation">(<a href="#ref-Hyndman1996" role="doc-biblioref">Hyndman and Fan 1996</a>)</span>.
-One logical way is to calculate the mean between the second (3.5) and third (3.8) position as you would do for the median <span class="citation">(<a href="#ref-Rowntree2018" role="doc-biblioref">Rowntree 2018</a>)</span>, <span class="math inline">\((3.5 + 3.8) / 2 = 3.65\)</span>.
-Jamovi uses a slightly more complex method, which will give a value of <span class="math inline">\(3.725\)</span> <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project 2024</a>)</span>.</p>
+<p>There are at least nine different ways to calculate the first quartile in this case, and different statistical software packages will sometimes use different default methods <span class="citation">(<a href="#ref-Hyndman1996">Hyndman and Fan 1996</a>)</span>.
+One logical way is to calculate the mean between the second (3.5) and third (3.8) position as you would do for the median <span class="citation">(<a href="#ref-Rowntree2018">Rowntree 2018</a>)</span>, <span class="math inline">\((3.5 + 3.8) / 2 = 3.65\)</span>.
+Jamovi uses a slightly more complex method, which will give a value of <span class="math inline">\(3.725\)</span> <span class="citation">(<a href="#ref-Jamovi2022">The jamovi project 2024</a>)</span>.</p>
 <p>It is important to emphasise that no one way of calculating quantiles is the one and only correct way.
 Statisticians have just proposed different approaches to calculating quantiles from data, and these different approaches sometimes give slightly different results.
 This can be unsatisfying when first learning statistics because it would be nice to have a single approach that is demonstrably correct, i.e., the <em>right</em> answer under all circumstances.
 Unfortunately, this is not the case here, nor is it the case for a lot of statistical techniques.
 Often there are different approaches to answering the same statistical question and no simple right answer.
 For this book, we will always report calculations of quantiles from jamovi.
-But it is important to recognise that different statistical tools might give different answers <span class="citation">(<a href="#ref-Hyndman1996" role="doc-biblioref">Hyndman and Fan 1996</a>)</span>.</p>
+But it is important to recognise that different statistical tools might give different answers <span class="citation">(<a href="#ref-Hyndman1996">Hyndman and Fan 1996</a>)</span>.</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Hyndman1996" class="csl-entry">
 Hyndman, Rob J., and Yanan Fan. 1996. <span>“Sample Quantiles in Statistical Packages.”</span> <em>American Statistician</em> 50 (4): 361–65. <a href="https://doi.org/10.1080/00031305.1996.10473566">https://doi.org/10.1080/00031305.1996.10473566</a>.
 </div>
@@ -758,7 +759,7 @@ The jamovi project. 2024. <span>“Jamovi (Version 2.5).”</span> Sydney, Austr
 <div class="footnotes">
 <hr />
 <ol start="7">
-<li id="fn7"><p>A good textbook for learning about theoretical statistics and the mathematics underlying the techniques in this book is <span class="citation">Miller and Miller (<a href="#ref-Miller2004" role="doc-biblioref">2004</a>)</span>.<a href="Chapter_11.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn7"><p>A good textbook for learning about theoretical statistics and the mathematics underlying the techniques in this book is <span class="citation">Miller and Miller (<a href="#ref-Miller2004">2004</a>)</span>.<a href="Chapter_11.html#fnref7" class="footnote-back">↩︎</a></p></li>
 <li id="fn8"><p>There are other types of means, such as the geometric mean or the harmonic mean, but we will not use these at all.<a href="Chapter_11.html#fnref8" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
@@ -782,42 +783,42 @@ The jamovi project. 2024. <span>“Jamovi (Version 2.5).”</span> Sydney, Austr
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-Summary_statistics.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/03-Summary_statistics.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

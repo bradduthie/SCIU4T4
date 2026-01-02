@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 8 Practical. Introduction to jamovi | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 8 Practical. Introduction to jamovi | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2025-04-09" />
+<meta name="date" content="2026-01-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -110,6 +110,7 @@ code span.wa { font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -574,14 +575,14 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_8" class="section level1 hasAnchor" number="8">
 <h1><span class="header-section-number">Chapter 8</span> <em>Practical</em>. Introduction to jamovi<a href="Chapter_8.html#Chapter_8" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This chapter focuses on learning how to work with datasets in jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project 2024</a>)</span>.
+<p>This chapter focuses on learning how to work with datasets in jamovi <span class="citation">(<a href="#ref-Jamovi2022">The jamovi project 2024</a>)</span>.
 You can download jamovi (<a href="https://www.jamovi.org/" class="uri">https://www.jamovi.org/</a>) for free or run it directly from a browser using the jamovi cloud (<a href="https://www.jamovi.org/cloud.html" class="uri">https://www.jamovi.org/cloud.html</a>).
 In this chapter, we will work with two datasets.</p>
 <p>The first dataset includes some hypothetical measurements of soil organic carbon (grams of carbon per kilogram of soil) from topsoil and subsoil collected in a national park.
-Such data might be collected to understand how pyrogenic carbon (i.e., carbon produced by the charring of biomass during a fire) is stored in different landscape areas <span class="citation">(<a href="#ref-Santin2016" role="doc-biblioref">Santín et al. 2016</a>; <a href="#ref-Preston2006" role="doc-biblioref">Preston and Schmidt 2006</a>)</span>.
+Such data might be collected to understand how pyrogenic carbon (i.e., carbon produced by the charring of biomass during a fire) is stored in different landscape areas <span class="citation">(<a href="#ref-Santin2016">Santín et al. 2016</a>; <a href="#ref-Preston2006">Preston and Schmidt 2006</a>)</span>.
 These data can be downloaded online<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>.</p>
 <p>The second dataset includes measurements of figs from trees of the Sonoran Desert Rock Fig (<em>Ficus petiolaris</em>) in Baja, Mexico (Figure 8.1).
-I collected these data in an effort to understand coexistence in a fig wasp community <span class="citation">(<a href="#ref-Duthie2015b" role="doc-biblioref">Duthie, Abbott, and Nason 2015</a>; <a href="#ref-Duthie2016" role="doc-biblioref">Duthie and Nason 2016</a>)</span>.
+I collected these data in an effort to understand coexistence in a fig wasp community <span class="citation">(<a href="#ref-Duthie2015b">Duthie, Abbott, and Nason 2015</a>; <a href="#ref-Duthie2016">Duthie and Nason 2016</a>)</span>.
 Measurements include fig lengths, widths, and heights in centimetres from four different fig trees, and the number of seeds in each fruit.
 This dataset can also be downloaded online<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a>.</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-24"></span>
@@ -590,8 +591,8 @@ This dataset can also be downloaded online<a href="#fn5" class="footnote-ref" id
 Figure 8.1: Three images showing the process of collecting data for the dimensions of figs from trees of the Sonoran Desert Rock Fig in Baja, Mexico. (A) Processing fig fruits, which included measuring the diameter of figs along three different axes of length, width, and height, (B) a fig still attached to a tree with a fig wasp on top of it, and (C) a sliced open fig with seeds along the inside of it.
 </p>
 </div>
-<p>This chapter will use the soil organic carbon dataset in <a href="#02_summary_statistics">Exercise 8.1</a> for summary statistics.
-The fig fruits dataset will be used for <a href="#02_transforming_variables">Exercise 8.2</a> on transforming variables and <a href="#02_computing_variables">Exercise 8.3</a> on computing a variable.
+<p>This chapter will use the soil organic carbon dataset in <a href="#id_02_summary_statistics">Exercise 8.1</a> for summary statistics.
+The fig fruits dataset will be used for <a href="#id_02_transforming_variables">Exercise 8.2</a> on transforming variables and <a href="#id_02_computing_variables">Exercise 8.3</a> on computing a variable.
 Some of these exercises will be similar to those of <a href="Chapter_3.html#Chapter_3">Chapter 3</a>, but in jamovi rather than a separate spreadsheet.</p>
 <div id="summary_statistics_02" class="section level2 hasAnchor" number="8.1">
 <h2><span class="header-section-number">8.1</span> Summary statistics<a href="Chapter_8.html#summary_statistics_02" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -912,7 +913,7 @@ These skills will be used throughout the book, so it is important to be comforta
 
 
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Duthie2015b" class="csl-entry">
 Duthie, A Bradley, Karen C Abbott, and John D Nason. 2015. <span>“<span class="nocase">Trade-offs and coexistence in fluctuating environments: evidence for a key dispersal-fecundity trade-off in five nonpollinating fig wasps</span>.”</span> <em>American Naturalist</em> 186 (1): 151–58. <a href="https://doi.org/10.1086/681621">https://doi.org/10.1086/681621</a>.
 </div>
@@ -956,42 +957,42 @@ The jamovi project. 2024. <span>“Jamovi (Version 2.5).”</span> Sydney, Austr
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-Statistical_Concepts.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/02-Statistical_Concepts.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

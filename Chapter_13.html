@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 13 Skew and kurtosis | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 13 Skew and kurtosis | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2025-04-09" />
+<meta name="date" content="2026-01-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -110,6 +110,7 @@ code span.wa { font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -580,7 +581,7 @@ The first concept is skew, and the second is kurtosis.
 This is also a good place to introduce what the word ‘moment’ refers to in the statistics.</p>
 <div id="skew" class="section level2 hasAnchor" number="13.1">
 <h2><span class="header-section-number">13.1</span> Skew<a href="Chapter_13.html#skew" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The <strong>skew</strong> of a distribution refers to its asymmetry <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>; <a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>)</span>, which can be observed in a histogram (Figure 13.1).
+<p>The <strong>skew</strong> of a distribution refers to its asymmetry <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>; <a href="#ref-Dytham2011">Dytham 2011</a>)</span>, which can be observed in a histogram (Figure 13.1).
 What we are looking for here are the sides of the distribution, also known as the ‘tails’.
 When the left tail sticks out as it does in Figure 13.1A, we can describe the distribution as ‘left-skewed’ or ‘negatively skewed’.
 When the right tail sticks out as it does in Figure 13.1B, we can describe the distribution as ‘right-skewed’ or ‘positively skewed’.</p>
@@ -590,17 +591,17 @@ When the right tail sticks out as it does in Figure 13.1B, we can describe the d
 Figure 13.1: Histograms showing a (A) distribution that has a negative (i.e., ‘left’) skew and (B) distribution that has a positive (i.e., ‘right’) skew.
 </p>
 </div>
-<p>When a distribution is skewed, the mean and median of the distribution will be different <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+<p>When a distribution is skewed, the mean and median of the distribution will be different <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>.
 This is because the mean of the distribution will be pulled towards the tail that sticks out due to the extreme values in the tail.
 In contrast, the median is robust to these extreme values.
-This can be important when interpreting the median versus mean as a measure of central tendency <span class="citation">(<a href="#ref-Reichmann1970" role="doc-biblioref">Reichmann 1970</a>)</span>.
-For example, household income data are typically highly right-skewed because a small proportion of households have a much higher income than the typical household <span class="citation">(<a href="#ref-Mcdonald2013" role="doc-biblioref">McDonald, Sorensen, and Turley 2013</a>)</span>.
-Consequently, when data are strongly skewed, the mean and median give us different information, and it often makes sense to use the median as an indication of what is typical <span class="citation">(<a href="#ref-Chiripanhura2011" role="doc-biblioref">Chiripanhura 2011</a>)</span>.</p>
+This can be important when interpreting the median versus mean as a measure of central tendency <span class="citation">(<a href="#ref-Reichmann1970">Reichmann 1970</a>)</span>.
+For example, household income data are typically highly right-skewed because a small proportion of households have a much higher income than the typical household <span class="citation">(<a href="#ref-Mcdonald2013">McDonald, Sorensen, and Turley 2013</a>)</span>.
+Consequently, when data are strongly skewed, the mean and median give us different information, and it often makes sense to use the median as an indication of what is typical <span class="citation">(<a href="#ref-Chiripanhura2011">Chiripanhura 2011</a>)</span>.</p>
 </div>
 <div id="kurtosis" class="section level2 hasAnchor" number="13.2">
 <h2><span class="header-section-number">13.2</span> Kurtosis<a href="Chapter_13.html#kurtosis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The <strong>kurtosis</strong> describes the extent to which a distribution is flat.
-In other words, whether data tend to be in the centre and at the tails, or whether data tend to be between the centre and tails <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+In other words, whether data tend to be in the centre and at the tails, or whether data tend to be between the centre and tails <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>.
 If there are more values in the centre and tails of the distribution, then the distribution is described as ‘leptokurtic’ (Figure 13.2A).
 If there are more values between the centre and the tails, then the distribution is described as ‘platykurtic’ (Figure 13.2B).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-44"></span>
@@ -614,12 +615,12 @@ Figure 13.2: Histograms showing a (A) leptokurtic distribution and (B) platykurt
 <div id="moments" class="section level2 hasAnchor" number="13.3">
 <h2><span class="header-section-number">13.3</span> Moments<a href="Chapter_13.html#moments" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>When actually doing statistics in the biological and environmental sciences, just being able to recognise skew and kurtosis on a histogram is usually sufficient.
-It is possible to actually calculate skew and kurtosis as we would measures of central tendency and spread <span class="citation">(<a href="#ref-Rahman1968" role="doc-biblioref">Rahman 1968</a>; <a href="#ref-Groeneveld1984" role="doc-biblioref">Groeneveld and Meeden 1984</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, but this is very rarely necessary <span class="citation">(but see <a href="#ref-Doane2011" role="doc-biblioref">Doane and Seward 2011</a>)</span>.
+It is possible to actually calculate skew and kurtosis as we would measures of central tendency and spread <span class="citation">(<a href="#ref-Rahman1968">Rahman 1968</a>; <a href="#ref-Groeneveld1984">Groeneveld and Meeden 1984</a>; <a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>, but this is very rarely necessary <span class="citation">(but see <a href="#ref-Doane2011">Doane and Seward 2011</a>)</span>.
 Nevertheless, this is a good place to introduce the concept of what a moment is in statistics.</p>
 <p>The word ‘moment’ usually refers to a brief period in time.
 But this is not what the word means in statistics.
-In statistics, a <strong>moment</strong> is related to how much some value (more technically, a random variable) is expected to deviate from the mean <span class="citation">(<a href="#ref-Upton2014" role="doc-biblioref">Upton and Cook 2014</a>)</span>.
-The term has its origins in physics <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>; <a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>.
+In statistics, a <strong>moment</strong> is related to how much some value (more technically, a random variable) is expected to deviate from the mean <span class="citation">(<a href="#ref-Upton2014">Upton and Cook 2014</a>)</span>.
+The term has its origins in physics <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>; <a href="#ref-Miller2004">Miller and Miller 2004</a>)</span>.
 A moment statistic describes the expected deviation from the mean, raised to some power.
 We have already looked at the second moment about the mean (i.e., the expected deviation raised to the power 2).
 This was the variance,</p>
@@ -628,12 +629,12 @@ This was the variance,</p>
 For example, a 3 would give us the third moment (skew), and a 4 would give us the fourth moment (kurtosis).
 The equations for calculating these sample moments are a bit more complicated than simply replacing the 2 with a 3 or 4 in the equation for variance.
 This is because the corrections for the third and fourth moments are no longer <span class="math inline">\(N - 1\)</span>.
-The corrections now also need to be scaled by the standard deviation <span class="citation">(for details, see <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+The corrections now also need to be scaled by the standard deviation <span class="citation">(for details, see <a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>.
 For the purpose of doing statistics in the biological and environmental sciences, it is usually sufficient to recognise that second, third, and fourth moments refer to variance, skew, and kurtosis, respectively.</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Chiripanhura2011" class="csl-entry">
 Chiripanhura, Blessing. 2011. <span>“<span class="nocase">Median and mean income analyses</span>.”</span> <em>Economic and Labour Market Review</em> 5: 45–64.
 </div>
@@ -685,42 +686,42 @@ Upton, Graham, and Ian Cook. 2014. <em><span class="nocase">Dictionary of Statis
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-Summary_statistics.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/03-Summary_statistics.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

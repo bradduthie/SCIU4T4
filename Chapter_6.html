@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 6 Accuracy, precision, and units | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 6 Accuracy, precision, and units | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2025-04-09" />
+<meta name="date" content="2026-01-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -110,6 +110,7 @@ code span.wa { font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -574,7 +575,7 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="Chapter_6" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">Chapter 6</span> Accuracy, precision, and units<a href="Chapter_6.html#Chapter_6" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>The science of measurements is called ‘metrology’, which, among other topics, focuses on measurement accuracy, precision, and units <span class="citation">(<a href="#ref-Rabinovich2013" role="doc-biblioref">Rabinovich 2013</a>)</span>.
+<p>The science of measurements is called ‘metrology’, which, among other topics, focuses on measurement accuracy, precision, and units <span class="citation">(<a href="#ref-Rabinovich2013">Rabinovich 2013</a>)</span>.
 We will not consider these topics in depth, but they are important for statistical techniques because measurement, in the broadest sense of the word, is the foundation of data collection.
 When collecting data, we want measurements to be accurate, precise, and clearly defined.</p>
 <div id="accuracy" class="section level2 hasAnchor" number="6.1">
@@ -586,12 +587,12 @@ Some measurements can be collected by simple observation (e.g., counting seedlin
 All of these measurements are subject to error.
 The <em>true</em> value of whatever it is that we are trying to measure (called the ‘measurand’) can differ from what we record when collecting data.
 This is true even for simple observations (e.g., we might miscount seedlings), so it is important to recognise that the data we collect come with some uncertainty.
-The <strong>accuracy</strong> of a measurement is defined by how close the measurement is to the <em>true</em> value of what we are trying to measure <span class="citation">(<a href="#ref-Rabinovich2013" role="doc-biblioref">Rabinovich 2013</a>)</span>.</p>
+The <strong>accuracy</strong> of a measurement is defined by how close the measurement is to the <em>true</em> value of what we are trying to measure <span class="citation">(<a href="#ref-Rabinovich2013">Rabinovich 2013</a>)</span>.</p>
 </div>
 <div id="precision" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Precision<a href="Chapter_6.html#precision" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The <strong>precision</strong> of a measurement is how consistent it will be if measurement is replicated multiple times.
-In other words, precision describes how similar measurements are expected to be <span class="citation">(<a href="#ref-Wardlaw1985" role="doc-biblioref">Wardlaw 1985</a>)</span>.
+In other words, precision describes how similar measurements are expected to be <span class="citation">(<a href="#ref-Wardlaw1985">Wardlaw 1985</a>)</span>.
 If, for example, a scale measures an object to have the exact same mass every time it is weighed (regardless of whether the mass is accurate), then the measurement is highly precise.
 If, however, the scale measures a different mass each time the object is weighed (for this hypothetical, assume that the true mass of the object does not change), then the measurement is not as precise.</p>
 <p>One way to visualise the difference between accuracy and precision is to imagine a set of targets, with the centre of the target representing the true value of what we are trying to measure (Figure 6.1)<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
@@ -601,26 +602,26 @@ If, however, the scale measures a different mass each time the object is weighed
 Figure 6.1: Conceptual figure illustrating the difference between accuracy and precision. Points in A are both accurate and precise, points in B are accurate but not precise, points in C are precise but not accurate, and points in D are neither accurate nor precise.
 </p>
 </div>
-<p>Note again that accuracy and precision are not necessarily the same <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>)</span>.
+<p>Note again that accuracy and precision are not necessarily the same <span class="citation">(<a href="#ref-Dytham2011">Dytham 2011</a>)</span>.
 Measurement can be accurate but not precise (Figure 6.1B) or precise but not accurate (Figure 6.1C).</p>
 </div>
 <div id="systems-of-units" class="section level2 hasAnchor" number="6.3">
 <h2><span class="header-section-number">6.3</span> Systems of units<a href="Chapter_6.html#systems-of-units" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Scientific units are standardised with the Système International D’Unités (SI).
-Having standardised units of measurement is highly important to ensure measurement accuracy <span class="citation">(<a href="#ref-Quinn1995" role="doc-biblioref">Quinn 1995</a>)</span>.
+Having standardised units of measurement is highly important to ensure measurement accuracy <span class="citation">(<a href="#ref-Quinn1995">Quinn 1995</a>)</span>.
 Originally, these units were often defined in terms of physical artefacts.
 For example, the kilogram (kg) was once defined by a physical cylinder of metal housed in the Bureau International des Poids et Mesures (BIPM).
-In other words, the mass of a metal sitting at the BIPM <em>defined</em> what a kilogram was, with the mass of every other measurement being based on this physical object <span class="citation">(<a href="#ref-Quinn1995" role="doc-biblioref">Quinn 1995</a>; <a href="#ref-Freedman2011" role="doc-biblioref">Freedman, Pisani, and Purves 2011</a>)</span>.
+In other words, the mass of a metal sitting at the BIPM <em>defined</em> what a kilogram was, with the mass of every other measurement being based on this physical object <span class="citation">(<a href="#ref-Quinn1995">Quinn 1995</a>; <a href="#ref-Freedman2011">Freedman, Pisani, and Purves 2011</a>)</span>.
 This can potentially present a problem if the mass of that one object changes over time, thereby causing a change in how a kilogram is defined.
 Where possible, it is therefore preferable to define units in terms of fundamental constants of nature.
-In 2019, for example, the kilogram was redefined in terms of the Planck constant, a specific atomic transition frequency, and the speed of light <span class="citation">(<a href="#ref-Stock2019" role="doc-biblioref">Stock et al. 2019</a>)</span>.
+In 2019, for example, the kilogram was redefined in terms of the Planck constant, a specific atomic transition frequency, and the speed of light <span class="citation">(<a href="#ref-Stock2019">Stock et al. 2019</a>)</span>.
 This ensures that measurements of mass remain accurate over time because what a kilogram represents in terms of mass cannot change.</p>
 <p>We can separate units into base units and derived units.
-Table 6.1 below lists some common base units for convenience <span class="citation">(<a href="#ref-Quinn1995" role="doc-biblioref">Quinn 1995</a>)</span>.
+Table 6.1 below lists some common base units for convenience <span class="citation">(<a href="#ref-Quinn1995">Quinn 1995</a>)</span>.
 You do not need to memorise these units, but it is good to be familiar with them.
 We will use these units throughout the book.</p>
 <table>
-<caption><strong>TABLE 6.1</strong> Base units of SI measurements. For details see <span class="citation">Quinn (<a href="#ref-Quinn1995" role="doc-biblioref">1995</a>)</span>.</caption>
+<caption><strong>TABLE 6.1</strong> Base units of SI measurements. For details see <span class="citation">Quinn (<a href="#ref-Quinn1995">1995</a>)</span>.</caption>
 <thead>
 <tr class="header">
 <th>Measured Quantity</th>
@@ -666,7 +667,7 @@ We will use these units throughout the book.</p>
 </tr>
 </tbody>
 </table>
-<p>We can also define derived SI units from the base units of Table 6.1 <span class="citation">(<a href="#ref-Gupta2020" role="doc-biblioref">Gupta 2020</a>)</span>.
+<p>We can also define derived SI units from the base units of Table 6.1 <span class="citation">(<a href="#ref-Gupta2020">Gupta 2020</a>)</span>.
 Examples of these derived SI units are provided in Table 6.2.
 Again, you do not need to memorise these units, but it is good to be aware of them.</p>
 <table>
@@ -756,7 +757,7 @@ Recognising that units are also part of calculations is important.</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Dytham2011" class="csl-entry">
 Dytham, Calvin. 2011. <em><span class="nocase">Choosing and Using Statistics: A Biologist’s Guide</span></em>. John Wiley &amp; Sons, West Sussex, UK.
 </div>
@@ -805,42 +806,42 @@ Wardlaw, Alastair C. 1985. <em><span class="nocase">Practical Statistics for Exp
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/02-Statistical_Concepts.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/02-Statistical_Concepts.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

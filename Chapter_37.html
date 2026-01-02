@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 37 Reporting statistics | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 37 Reporting statistics | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2025-04-09" />
+<meta name="date" content="2026-01-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -110,6 +110,7 @@ code span.wa { font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -586,8 +587,8 @@ Finding out an analysis will not work after spending a considerable amount of ti
 Before collecting any data, it is therefore important to plan, or even simulate, what a dataset will look like in a tidy format.
 This can be done by creating a spreadsheet with appropriate data columns prior to data collection.
 It is important to think about what kinds of analyses will be performed and how large of a sample size might be needed.
-It is often a good idea to conduct a power analysis before data collection <span class="citation">(<a href="#ref-Steidl1997" role="doc-biblioref">Steidl, Hayes, and Schauber 1997</a>)</span>.
-A power analysis is a formal way of estimating how big of a sample size is necessary to reject the null hypothesis given a particular effect size <span class="citation">(<a href="#ref-Jones2003" role="doc-biblioref">Jones, Carley, and Harrison 2003</a>)</span>.
+It is often a good idea to conduct a power analysis before data collection <span class="citation">(<a href="#ref-Steidl1997">Steidl, Hayes, and Schauber 1997</a>)</span>.
+A power analysis is a formal way of estimating how big of a sample size is necessary to reject the null hypothesis given a particular effect size <span class="citation">(<a href="#ref-Jones2003">Jones, Carley, and Harrison 2003</a>)</span>.
 For example, suppose that we want test whether 2 species of fig wasps have different mean ovipositor lengths, as in the example from <a href="Chapter_35.html#Chapter_35">Chapter 35</a>.
 A power analysis might be used to determine how many fig wasps need to be collected and measured to detect that a given difference in mean ovipositor length (e.g., 1.0 mm) is statistically significant (i.e., P &lt; 0.05).
 In other words, if the difference in mean ovipositor length between two species is 1.0 mm, then how big of a sample size is needed to reliably reject the null hypothesis (P &lt; 0.05) when running a t-test?
@@ -608,34 +609,34 @@ Such documents are typically (though not always) divided into abstract, introduc
 <h3><span class="header-section-number">37.2.1</span> Abstract<a href="Chapter_37.html#abstract" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The abstract is a brief summary of a scientific paper, and should be a self-contained paragraph of somewhere between 150-500 words that provide some relevant background and communicate the most important findings of the paper.
 A brief explanation of the methodology is important, but there is usually no need to state what statistical tests were performed.
-It is also not usually strictly necessary to present statistical output in the abstract, although doing so can often be useful <span class="citation">(<a href="#ref-Andrade2011" role="doc-biblioref">Andrade 2011</a>)</span>.</p>
+It is also not usually strictly necessary to present statistical output in the abstract, although doing so can often be useful <span class="citation">(<a href="#ref-Andrade2011">Andrade 2011</a>)</span>.</p>
 </div>
 <div id="introduction" class="section level3 hasAnchor" number="37.2.2">
 <h3><span class="header-section-number">37.2.2</span> Introduction<a href="Chapter_37.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The Introduction of a scientific report should provide enough background for the reader to understand the research question and its importance.
-Introductions should start by broadly establishing the field of study and its importance, then provide a summary of relevant work that has been previously conducted, and finally explain the knowledge gap that the report will address <span class="citation">(<a href="#ref-Woodford1999" role="doc-biblioref">Woodford 1999</a>; <a href="#ref-Turbek2016" role="doc-biblioref">Turbek et al. 2016</a>)</span>.
+Introductions should start by broadly establishing the field of study and its importance, then provide a summary of relevant work that has been previously conducted, and finally explain the knowledge gap that the report will address <span class="citation">(<a href="#ref-Woodford1999">Woodford 1999</a>; <a href="#ref-Turbek2016">Turbek et al. 2016</a>)</span>.
 In other words, the Introduction should ideally finish by explaining what is not yet known, but will be addressed by the scientific report.
-No statistical methods or analyses need to be presented in the Introduction because the scientific question needs to be introduced before the methods or statistics will make sense <span class="citation">(<a href="#ref-Bouma2000" role="doc-biblioref">Bouma 2000</a>)</span>.
+No statistical methods or analyses need to be presented in the Introduction because the scientific question needs to be introduced before the methods or statistics will make sense <span class="citation">(<a href="#ref-Bouma2000">Bouma 2000</a>)</span>.
 Nevertheless, it is important to clearly state the scientific question so that readers will be able to appreciate why particular statistical techniques are being introduced in the Methods.</p>
 </div>
 <div id="methods" class="section level3 hasAnchor" number="37.2.3">
 <h3><span class="header-section-number">37.2.3</span> Methods<a href="Chapter_37.html#methods" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The Methods section should explain how data were collected and analysed, including a justification of research design and analysis choice if appropriate <span class="citation">(<a href="#ref-Bouma2000" role="doc-biblioref">Bouma 2000</a>)</span>.
+<p>The Methods section should explain how data were collected and analysed, including a justification of research design and analysis choice if appropriate <span class="citation">(<a href="#ref-Bouma2000">Bouma 2000</a>)</span>.
 Before explaining the statistical analyses used, it is important to explain what data were collected and how.
-This includes details about biological species, field locations, chemicals and equipment used, experimental procedures, and ethics <span class="citation">(<a href="#ref-council2006scientific" role="doc-biblioref">Science Editors 2006</a>; <a href="#ref-Woodford1999" role="doc-biblioref">Woodford 1999</a>)</span>.
-Units of measurement should also be provided for all variables <span class="citation">(<a href="#ref-Lang1997" role="doc-biblioref">Lang and Secic 1997</a>)</span>.
-The Methods should include the name of any statistical tests used <span class="citation">(<a href="#ref-council2006scientific" role="doc-biblioref">Science Editors 2006</a>)</span>, and whether or not data conform to test assumptions (or, e.g., if data need to be transformed to fit the assumptions of statistical tests).
-The statistical software used to analyse the data, such as jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project 2024</a>)</span> or R <span class="citation">(<a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>, should also be cited <span class="citation">(<a href="#ref-Lang1997" role="doc-biblioref">Lang and Secic 1997</a>; <a href="#ref-council2006scientific" role="doc-biblioref">Science Editors 2006</a>)</span>.
+This includes details about biological species, field locations, chemicals and equipment used, experimental procedures, and ethics <span class="citation">(<a href="#ref-council2006scientific">Science Editors 2006</a>; <a href="#ref-Woodford1999">Woodford 1999</a>)</span>.
+Units of measurement should also be provided for all variables <span class="citation">(<a href="#ref-Lang1997">Lang and Secic 1997</a>)</span>.
+The Methods should include the name of any statistical tests used <span class="citation">(<a href="#ref-council2006scientific">Science Editors 2006</a>)</span>, and whether or not data conform to test assumptions (or, e.g., if data need to be transformed to fit the assumptions of statistical tests).
+The statistical software used to analyse the data, such as jamovi <span class="citation">(<a href="#ref-Jamovi2022">The jamovi project 2024</a>)</span> or R <span class="citation">(<a href="#ref-Rproject">R Core Team 2022</a>)</span>, should also be cited <span class="citation">(<a href="#ref-Lang1997">Lang and Secic 1997</a>; <a href="#ref-council2006scientific">Science Editors 2006</a>)</span>.
 For example:</p>
 <blockquote>
-<p>“Because stigmatic pollen counts were not normally distributed, they were analysed using non-parametric statistics (Mann-Whitney U test) for pairwise comparisons among four times of collection at the 0.05 level of significance. All data analysis was conducted in SPSS, version 17.0. All means are presented with standard errors (<span class="math inline">\(\pm\)</span> SE)” <span class="citation">(<a href="#ref-Xiong2013" role="doc-biblioref">Xiong, Fang, and Huang 2013</a>)</span>.</p>
+<p>“Because stigmatic pollen counts were not normally distributed, they were analysed using non-parametric statistics (Mann-Whitney U test) for pairwise comparisons among four times of collection at the 0.05 level of significance. All data analysis was conducted in SPSS, version 17.0. All means are presented with standard errors (<span class="math inline">\(\pm\)</span> SE)” <span class="citation">(<a href="#ref-Xiong2013">Xiong, Fang, and Huang 2013</a>)</span>.</p>
 </blockquote>
 <blockquote>
-<p>“All statistical analyses were carried out using R 3.1.0 (R Core Team 2012). […] ANOVAs were carried out to test whether the three soil-conditioning treatments affected plant biomass and trait and soil N availability, and whether there was an effect of drought, with a two-way interaction term between soil conditioning and drought. Non-constancy of variances was evaluated using Levene’s test in the car package of R (Levene 1960), and normality was ascertained and corrected for where necessary using Box–Cox transformations in the MASS package (Box and Cox 1964)” <span class="citation">(<a href="#ref-Fry2018" role="doc-biblioref">Fry et al. 2018</a>)</span>.</p>
+<p>“All statistical analyses were carried out using R 3.1.0 (R Core Team 2012). […] ANOVAs were carried out to test whether the three soil-conditioning treatments affected plant biomass and trait and soil N availability, and whether there was an effect of drought, with a two-way interaction term between soil conditioning and drought. Non-constancy of variances was evaluated using Levene’s test in the car package of R (Levene 1960), and normality was ascertained and corrected for where necessary using Box–Cox transformations in the MASS package (Box and Cox 1964)” <span class="citation">(<a href="#ref-Fry2018">Fry et al. 2018</a>)</span>.</p>
 </blockquote>
 <p>Often, this statistical analysis is reported in a separate subsection of the methods.
-It is not necessary to state null hypotheses for statistical tests <span class="citation">(<a href="#ref-Lang1997" role="doc-biblioref">Lang and Secic 1997</a>)</span>.
-Overall, the Methods should explain the design of the study, data collection, and statistical analysis in sufficient detail for readers to be able to evaluate and potentially repeat the study <span class="citation">(<a href="#ref-Woodford1999" role="doc-biblioref">Woodford 1999</a>)</span>.
+It is not necessary to state null hypotheses for statistical tests <span class="citation">(<a href="#ref-Lang1997">Lang and Secic 1997</a>)</span>.
+Overall, the Methods should explain the design of the study, data collection, and statistical analysis in sufficient detail for readers to be able to evaluate and potentially repeat the study <span class="citation">(<a href="#ref-Woodford1999">Woodford 1999</a>)</span>.
 To avoid length Methods sections, methodological and statistical details can sometimes be placed in supplemental material (i.e., a separate document to accompany the main text).</p>
 </div>
 <div id="results" class="section level3 hasAnchor" number="37.2.4">
@@ -644,27 +645,27 @@ To avoid length Methods sections, methodological and statistical details can som
 In other words, the primary focus should be on the patterns observed in the data, not an explanation of their underlying biological or environmental cause.
 This allows readers to evaluate results objectively, without interpretation from the author.</p>
 <p>Results should report relevant statistics and their uncertainty.
-Confidence intervals should be provided for key summary statistics <span class="citation">(<a href="#ref-Lang1997" role="doc-biblioref">Lang and Secic 1997</a>)</span>.
+Confidence intervals should be provided for key summary statistics <span class="citation">(<a href="#ref-Lang1997">Lang and Secic 1997</a>)</span>.
 Key statistics from statistical tests can be reported in parentheses.
 For example, we might state, “an Independent Samples t-test found a significant difference between mean fig wasp ovipositor lengths (t = 2.419, df = 30, P = 0.022)”.
 Relevant statistics for specific tests are explained below in <a href="Chapter_37.html#statistical-tests">section 37.4</a>.
-In general, it is good to report a p-value exactly, but if the value is less than 0.001, it is fine to report as <span class="math inline">\(P &lt; 0.001\)</span> <span class="citation">(<a href="#ref-council2006scientific" role="doc-biblioref">Science Editors 2006</a>)</span>.
-Direct measurements should be reported to the level of precision allowed by the measuring device used, and summary statistics such as means and standard deviations should be reported to just 1 significant figure higher than the raw measurements <span class="citation">(<a href="#ref-council2006scientific" role="doc-biblioref">Science Editors 2006</a>)</span>.
+In general, it is good to report a p-value exactly, but if the value is less than 0.001, it is fine to report as <span class="math inline">\(P &lt; 0.001\)</span> <span class="citation">(<a href="#ref-council2006scientific">Science Editors 2006</a>)</span>.
+Direct measurements should be reported to the level of precision allowed by the measuring device used, and summary statistics such as means and standard deviations should be reported to just 1 significant figure higher than the raw measurements <span class="citation">(<a href="#ref-council2006scientific">Science Editors 2006</a>)</span>.
 Note that this only applies to <em>reporting</em> statistics.
-For the actual statistical analysis, all digits should be used <span class="citation">(<a href="#ref-Lang1997" role="doc-biblioref">Lang and Secic 1997</a>)</span>.</p>
+For the actual statistical analysis, all digits should be used <span class="citation">(<a href="#ref-Lang1997">Lang and Secic 1997</a>)</span>.</p>
 </div>
 <div id="discussion" class="section level3 hasAnchor" number="37.2.5">
 <h3><span class="header-section-number">37.2.5</span> Discussion<a href="Chapter_37.html#discussion" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The Discussion section should present the main conclusions of the study, followed by any secondary conclusions <span class="citation">(<a href="#ref-Woodford1999" role="doc-biblioref">Woodford 1999</a>)</span>.
-It interprets the results and explains their importance in the broader context of the scientific literature <span class="citation">(<a href="#ref-Turbek2016" role="doc-biblioref">Turbek et al. 2016</a>)</span>.
-The Discussion should also critically evaluate the strengths and weakness of the report and attempt to generalise its conclusions <span class="citation">(<a href="#ref-Turbek2016" role="doc-biblioref">Turbek et al. 2016</a>)</span>.
+<p>The Discussion section should present the main conclusions of the study, followed by any secondary conclusions <span class="citation">(<a href="#ref-Woodford1999">Woodford 1999</a>)</span>.
+It interprets the results and explains their importance in the broader context of the scientific literature <span class="citation">(<a href="#ref-Turbek2016">Turbek et al. 2016</a>)</span>.
+The Discussion should also critically evaluate the strengths and weakness of the report and attempt to generalise its conclusions <span class="citation">(<a href="#ref-Turbek2016">Turbek et al. 2016</a>)</span>.
 The open-ended nature of the Discussion section often makes it the most difficult section to write for many researchers.</p>
 </div>
 </div>
 <div id="figures-and-tables" class="section level2 hasAnchor" number="37.3">
 <h2><span class="header-section-number">37.3</span> Figures and tables<a href="Chapter_37.html#figures-and-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Figures and tables should be used whenever possible to efficiently communicate results.
-It is best to avoid presenting the same information in figures and tables, and there is no reason to duplicate information in the main text of a manuscript if it is presented clearly in a table or figure <span class="citation">(<a href="#ref-Lang1997" role="doc-biblioref">Lang and Secic 1997</a>)</span>.
+It is best to avoid presenting the same information in figures and tables, and there is no reason to duplicate information in the main text of a manuscript if it is presented clearly in a table or figure <span class="citation">(<a href="#ref-Lang1997">Lang and Secic 1997</a>)</span>.
 All figures and tables should be referenced within the main text.
 This is usually done parenthetically (see below for examples).
 Figures and tables should always include an informative caption that is self-contained so that readers can understand the information being presented in the figure or table without referring back to the main text.</p>
@@ -674,11 +675,11 @@ Figures and tables should always include an informative caption that is self-con
 Figure axes should always be clearly labelled with the appropriate units of measurement.
 Captions should be placed below figures.
 Colour should not be used unless it is necessary.
-When using colour in figures, it is important to use accessible colour combinations and high contrast <span class="citation">(<a href="#ref-Jambor2021" role="doc-biblioref">Jambor et al. 2021</a>; <a href="#ref-Painter2021" role="doc-biblioref">Painter et al. 2021</a>)</span>.
+When using colour in figures, it is important to use accessible colour combinations and high contrast <span class="citation">(<a href="#ref-Jambor2021">Jambor et al. 2021</a>; <a href="#ref-Painter2021">Painter et al. 2021</a>)</span>.
 For electronic documents, alt images should be provided whenever possible.</p>
 <p>Different kinds of figures are appropriate for different kinds of data (see <a href="Chapter_10.html#Chapter_10">Chapter 10</a> and <a href="Chapter_30.html#Chapter_30">Chapter 30</a>).
-Histograms and box-whisker plots are most effective for presenting the distribution of continuous data <span class="citation">(<a href="#ref-Lang1997" role="doc-biblioref">Lang and Secic 1997</a>; <a href="#ref-Weissgerber2015" role="doc-biblioref">Weissgerber et al. 2015</a>)</span>.
-Barplots and pie charts present categorical data <span class="citation">(<a href="#ref-Lang1997" role="doc-biblioref">Lang and Secic 1997</a>; <a href="#ref-Weissgerber2015" role="doc-biblioref">Weissgerber et al. 2015</a>)</span>.
+Histograms and box-whisker plots are most effective for presenting the distribution of continuous data <span class="citation">(<a href="#ref-Lang1997">Lang and Secic 1997</a>; <a href="#ref-Weissgerber2015">Weissgerber et al. 2015</a>)</span>.
+Barplots and pie charts present categorical data <span class="citation">(<a href="#ref-Lang1997">Lang and Secic 1997</a>; <a href="#ref-Weissgerber2015">Weissgerber et al. 2015</a>)</span>.
 Scatterplots are used to compare quantitative variables.</p>
 <p>When presenting a figure with multiple panels, it is important to distinguish between panels, usually with letters (e.g., A, B, C).
 Examples of figures can be found throughout this book.</p>
@@ -689,7 +690,7 @@ Examples of figures can be found throughout this book.</p>
 Tables should include informative column headings, and units of measurement should be reported in headings or in the table caption.
 Table captions should be placed above tables.
 Some statistical analyses are usefully reported in the form of a table, such as counts in contingency tables (e.g., for a <span class="math inline">\(\chi^{2}\)</span> test of association), or the results of an ANOVA or linear regression.
-Jamovi output tables are typically appropriate for reporting statistical tests, and these can be copied and pasted into documents <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project 2024</a>)</span>.</p>
+Jamovi output tables are typically appropriate for reporting statistical tests, and these can be copied and pasted into documents <span class="citation">(<a href="#ref-Jamovi2022">The jamovi project 2024</a>)</span>.</p>
 </div>
 </div>
 <div id="statistical-tests" class="section level2 hasAnchor" number="37.4">
@@ -735,7 +736,7 @@ An example of this is, “egg production was positively correlated with body mas
 <div id="reporting-regressions" class="section level3 hasAnchor" number="37.4.7">
 <h3><span class="header-section-number">37.4.7</span> Reporting regressions<a href="Chapter_37.html#reporting-regressions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>When reporting the results of a regression, it is important to report the R-squared value, regression coefficients, and p-values of model or regression coefficients.
-It is also advised to report the equation of the linear regression <span class="citation">(<a href="#ref-Lang1997" role="doc-biblioref">Lang and Secic 1997</a>)</span>.
+It is also advised to report the equation of the linear regression <span class="citation">(<a href="#ref-Lang1997">Lang and Secic 1997</a>)</span>.
 There are multiple ways of presenting this information clearly (in some cases, it might make sense to present the equation in a figure rather than the text).
 One example would be, “sparrow body mass (g) increased significantly with sparrow total length (mm; <span class="math inline">\(R^{2} = 0.341\)</span>, <span class="math inline">\(b_{1} = 0.242\)</span>, <span class="math inline">\(P &lt; 0.001\)</span>) according to the model, <span class="math inline">\(mass = -13.07 + 0.242(length)\)</span>”.
 When reporting multiple regression coefficients, relevant subscripts can be added for each coefficient (e.g., <span class="math inline">\(b_{1}\)</span>, <span class="math inline">\(b_{2}\)</span>, or more explicitly <span class="math inline">\(b_{mass}\)</span>, <span class="math inline">\(b_{wing\:length}\)</span>).
@@ -748,11 +749,11 @@ For large multiple regressions with many coefficients, it might make sense to re
 These suggestions can be applied to scientific reports, dissertations, or scientific manuscripts.
 The recommendations in this chapter should mostly be treated as guidelines.
 There is no universally agreed upon way of reporting statistical output, but the guidelines of this chapter should be sufficient unless instructed otherwise.
-<span class="citation">Lang and Secic (<a href="#ref-Lang1997" role="doc-biblioref">1997</a>)</span> provides a more comprehensive guide to statistical reporting.</p>
+<span class="citation">Lang and Secic (<a href="#ref-Lang1997">1997</a>)</span> provides a more comprehensive guide to statistical reporting.</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Andrade2011" class="csl-entry">
 Andrade, Chittaranjan. 2011. <span>“<span class="nocase">How to write a good abstract for a scientific paper or conference presentation</span>.”</span> <em>Indian Journal of Psychiatry</em> 53 (2): 172–75. <a href="https://doi.org/10.4103/0019-5545.82558">https://doi.org/10.4103/0019-5545.82558</a>.
 </div>
@@ -819,42 +820,42 @@ Xiong, Y-Z, Q Fang, and S-Q Huang. 2013. <span>“<span class="nocase">Pollinato
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/12-Statistical_Reporting.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/12-Statistical_Reporting.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

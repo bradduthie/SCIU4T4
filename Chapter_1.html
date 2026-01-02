@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Background mathematics | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Background mathematics | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2025-04-09" />
+<meta name="date" content="2026-01-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -110,6 +110,7 @@ code span.wa { font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -576,7 +577,7 @@ div.csl-indent {
 <h1><span class="header-section-number">Chapter 1</span> Background mathematics<a href="Chapter_1.html#Chapter_1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>There are at least two types of mathematical challenges that come with first learning statistics.
 The first challenge is simply knowing the background mathematics upon which many statistical tools rely.
-Fortunately, while the <em>theory</em> underlying statistical techniques does rely on some quite advanced mathematics <span class="citation">(e.g., see <a href="#ref-Mclean1991" role="doc-biblioref">Mclean, Sanders, and Stroup 1991</a>; <a href="#ref-Rencher2000" role="doc-biblioref">Rencher 2000</a>; <a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, the <em>application</em> of standard statistical tools usually does not.
+Fortunately, while the <em>theory</em> underlying statistical techniques does rely on some quite advanced mathematics <span class="citation">(e.g., see <a href="#ref-Mclean1991">Mclean, Sanders, and Stroup 1991</a>; <a href="#ref-Rencher2000">Rencher 2000</a>; <a href="#ref-Miller2004">Miller and Miller 2004</a>)</span>, the <em>application</em> of standard statistical tools usually does not.
 This book focuses on the application of statistical techniques, so all that is required is a background in some fundamental mathematical concepts such as mathematical operations (addition, subtraction, multiplication, division, and exponents), simple algebra, and probability.
 This chapter will review mathematical operations and the symbols used to communicate them.</p>
 <p>The second mathematical challenge that students face when learning statistics for the first time is a bit more subtle.
@@ -595,7 +596,7 @@ These topics will be relevant throughout the book, so it is important to underst
 <h2><span class="header-section-number">1.1</span> Numbers and operations<a href="Chapter_1.html#numbers-and-operations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Calculating statistics and reading statistical output requires some knowledge of numbers and basic mathematical operations.
 This section is a summary of the basic mathematical tools that will be used in introductory statistics.
-Much of this section is inspired by <span class="citation">Courant, Robbins, and Stewart (<a href="#ref-Courant1996" role="doc-biblioref">1996</a>)</span> and chapter 2 of <span class="citation">Pastor (<a href="#ref-Pastor2008" role="doc-biblioref">2008</a>)</span>.
+Much of this section is inspired by <span class="citation">Courant, Robbins, and Stewart (<a href="#ref-Courant1996">1996</a>)</span> and chapter 2 of <span class="citation">Pastor (<a href="#ref-Pastor2008">2008</a>)</span>.
 This section will focus on only the numbers and mathematical operations relevant to this book.
 The objective here is to present some very well-known ideas in an interesting way, and to intermix them with bits of information that might be new and interesting.
 For doing statistics, what you really <em>need</em> to know here are the operations and the notation, that is, how operations such as addition, multiplication, and exponents are calculated and represented mathematically.</p>
@@ -638,7 +639,7 @@ When multiplying integers, we always get another integer.
 Multiplying two positive numbers always equals another positive number (e.g., <span class="math inline">\(2 \times 6 = 12\)</span>).
 Multiplying a positive and a negative number equals a negative number (e.g., <span class="math inline">\(-2 \times 6 = -12\)</span>).
 And multiplying two negative numbers equals a positive number (e.g., <span class="math inline">\(-2 \times -6 = 12\)</span>).
-There are multiple ways of thinking about why this last one is true <span class="citation">(see, e.g., <a href="#ref-Askey1999" role="doc-biblioref">Askey 1999</a> for one explanation)</span>, but for now we can take it as a given.</p>
+There are multiple ways of thinking about why this last one is true <span class="citation">(see, e.g., <a href="#ref-Askey1999">Askey 1999</a> for one explanation)</span>, but for now we can take it as a given.</p>
 <p>As with addition and subtraction, we need an operation that can go back from multiplied values (the product) to the numbers being multiplied.
 In other words, if we multiply to get <span class="math inline">\(2 \times 6 = 12\)</span> (where 12 is the product), then we need something that goes back from 12 to 2.
 Division allows us to do this, such that <span class="math inline">\(12 \div 6 = 2\)</span>.
@@ -685,9 +686,9 @@ Remarkably, the set of irrational numbers is larger than the set of rational num
 <p>Perhaps the most famous irrational number is <span class="math inline">\(\pi\)</span>, which appears throughout science and mathematics and is most commonly introduced as the ratio of a circle’s circumference to its diameter.
 Its value is <span class="math inline">\(\pi \approx 3.14159\)</span>, where the symbol <span class="math inline">\(\approx\)</span> means ‘approximately.’
 Actually, the decimal expansion of <span class="math inline">\(\pi\)</span> is infinite and non-repeating; the decimals go on forever and never repeat themselves in a predictable pattern.
-As of 2019, over 31 trillion (i.e., 31000000000000) decimals of <span class="math inline">\(\pi\)</span> have been calculated <span class="citation">(<a href="#ref-Yee2019" role="doc-biblioref">Yee 2019</a>)</span>.</p>
+As of 2019, over 31 trillion (i.e., 31000000000000) decimals of <span class="math inline">\(\pi\)</span> have been calculated <span class="citation">(<a href="#ref-Yee2019">Yee 2019</a>)</span>.</p>
 <p>The rational and irrational numbers together comprise a set of numbers called <em>real</em> numbers (we can represent these with the symbol <span class="math inline">\(\mathbb{R}\)</span>), and this is where we will stop.
-This story of numbers and operations continues with imaginary and complex numbers <span class="citation">(<a href="#ref-Courant1996" role="doc-biblioref">Courant, Robbins, and Stewart 1996</a>; <a href="#ref-Pastor2008" role="doc-biblioref">Pastor 2008</a>)</span>, but these are not necessary for introductory statistics.</p>
+This story of numbers and operations continues with imaginary and complex numbers <span class="citation">(<a href="#ref-Courant1996">Courant, Robbins, and Stewart 1996</a>; <a href="#ref-Pastor2008">Pastor 2008</a>)</span>, but these are not necessary for introductory statistics.</p>
 </div>
 <div id="logarithms" class="section level2 hasAnchor" number="1.2">
 <h2><span class="header-section-number">1.2</span> Logarithms<a href="Chapter_1.html#logarithms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -705,9 +706,9 @@ For the latter, we might say that the base 10 logarithm of 1000 is 3.
 This is actually extremely useful in mathematics and statistics.
 Mathematically, logarithms have the very useful property,</p>
 <p><span class="math display">\[\log_{10}(ab) = \log_{10}(a) + \log_{10}(b).\]</span></p>
-<p>Historically, this has been used to make calculations easier by converting multiplication to addition <span class="citation">(<a href="#ref-Stewart2008" role="doc-biblioref">Stewart 2008</a>)</span>.
+<p>Historically, this has been used to make calculations easier by converting multiplication to addition <span class="citation">(<a href="#ref-Stewart2008">Stewart 2008</a>)</span>.
 In statistics, and across the biological and environmental sciences, we often use logarithms when we want to represent something that changes exponentially on a more convenient scale.
-For example, suppose that we wanted to illustrate the change in global CO<span class="math inline">\(_{2}\)</span> emissions over time <span class="citation">(<a href="#ref-Friedlingstein2022" role="doc-biblioref">Friedlingstein et al. 2022</a>)</span>.
+For example, suppose that we wanted to illustrate the change in global CO<span class="math inline">\(_{2}\)</span> emissions over time <span class="citation">(<a href="#ref-Friedlingstein2022">Friedlingstein et al. 2022</a>)</span>.
 We could show year on the x-axis and emissions in billions of tonnes of CO<span class="math inline">\(_{2}\)</span> on the y-axis (Figure 1.1).</p>
 <div class="figure"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
 <img src="bookdown-demo_files/figure-html/unnamed-chunk-2-1.png" alt="A plot showing an exponential increase in global carbon dioxide emissions over time" width="100%" />
@@ -728,7 +729,7 @@ Figure 1.2: Natural logarithm of global carbon dioxide emissions 1750–2021.
 <p>It appears from the logged data in Figure 1.2 that global CO<span class="math inline">\(_{2}\)</span> emissions were indeed increasing from 1750 to 1850.
 Note that Figure 1.2 presents the <em>natural logarithm</em> of CO<span class="math inline">\(_{2}\)</span> emissions on the y-axis.
 The natural logarithm uses Euler’s number, <span class="math inline">\(e \approx 2.718282\)</span>, as a base.
-Euler’s number <span class="math inline">\(e\)</span> is an irrational number (like <span class="math inline">\(\pi\)</span>), which corresponds to the intrinsic rate of increase of a population’s size in ecology <span class="citation">(<a href="#ref-Gotelli2001" role="doc-biblioref">Gotelli 2001</a>)</span>, or, in banking, interest compounded continuously (like <span class="math inline">\(\pi\)</span>, <span class="math inline">\(e\)</span> actually shows up in a lot of different places throughout science and mathematics).
+Euler’s number <span class="math inline">\(e\)</span> is an irrational number (like <span class="math inline">\(\pi\)</span>), which corresponds to the intrinsic rate of increase of a population’s size in ecology <span class="citation">(<a href="#ref-Gotelli2001">Gotelli 2001</a>)</span>, or, in banking, interest compounded continuously (like <span class="math inline">\(\pi\)</span>, <span class="math inline">\(e\)</span> actually shows up in a lot of different places throughout science and mathematics).
 We probably could have just as easily used 10 as a base, but <span class="math inline">\(e\)</span> is usually the default base to use in science (bases 10 or 2 are also often used).
 Note that we can convert back to the non-logged scale by raising numbers to the power of <span class="math inline">\(e\)</span>.
 For example, <span class="math inline">\(e^{-4} \approx 0.018\)</span>, <span class="math inline">\(e^{-2} \approx 0.135\)</span>, <span class="math inline">\(e^{0} = 1\)</span>, and <span class="math inline">\(e^{2} = 7.390\)</span>.</p>
@@ -737,11 +738,11 @@ For example, <span class="math inline">\(e^{-4} \approx 0.018\)</span>, <span cl
 <h2><span class="header-section-number">1.3</span> Order of operations<a href="Chapter_1.html#order-of-operations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Every once in a while, a maths problem like the one below seems to go viral online,</p>
 <p><span class="math display">\[x = 8 \div 2\left(2+2\right).\]</span></p>
-<p>Depending on the order in which calculations are made, some people will conclude that <span class="math inline">\(x = 16\)</span>, while others conclude that <span class="math inline">\(x = 1\)</span> <span class="citation">(<a href="#ref-Chernoff2022" role="doc-biblioref">Chernoff and Zazkis 2022</a>)</span>.
+<p>Depending on the order in which calculations are made, some people will conclude that <span class="math inline">\(x = 16\)</span>, while others conclude that <span class="math inline">\(x = 1\)</span> <span class="citation">(<a href="#ref-Chernoff2022">Chernoff and Zazkis 2022</a>)</span>.
 The confusion is not caused by the above calculation being difficult, but by peoples’ differences in interpreting the rules for the order by which calculations should be carried out.
 If we first divide 8/2 to get 4, then multiply by (2 + 2), we get 16.
 If we first multiply 2 by (2 + 2) to get 8, then divide, we get 1.
-The truth is that even if there is a ‘right’ answer here <span class="citation">(<a href="#ref-Chernoff2022" role="doc-biblioref">Chernoff and Zazkis 2022</a>)</span>, the equation could be written more clearly.
+The truth is that even if there is a ‘right’ answer here <span class="citation">(<a href="#ref-Chernoff2022">Chernoff and Zazkis 2022</a>)</span>, the equation could be written more clearly.
 We might, for example, rewrite the above to more clearly express the intended order of operations,</p>
 <p><span class="math display">\[x = \frac{8}{2}\left(2 + 2\right) = 16.\]</span></p>
 <p>We could write it a different way to express a different intended order of operations,</p>
@@ -786,7 +787,7 @@ For example,</p>
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Askey1999" class="csl-entry">
 Askey, R. 1999. <span>“<span class="nocase">Why does a negative x a negative = a positive?</span>”</span> <em>American Educator</em> 23 (3): 4–5.
 </div>
@@ -841,42 +842,42 @@ Yee, Alexander J. 2019. <span>“<span class="nocase">Google Cloud Topples the P
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/01-Background.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/01-Background.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

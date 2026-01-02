@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 29 Frequency and count data | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 29 Frequency and count data | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2025-04-09" />
+<meta name="date" content="2026-01-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -110,6 +110,7 @@ code span.wa { font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -598,7 +599,7 @@ We need some probability density distribution that is our null distribution, whi
 We then compare this null distribution to our test statistic to find the probability of sampling a test statistic as or more extreme if the null hypothesis is really true (i.e., a p-value).</p>
 <div id="chi-square-distribution" class="section level2 hasAnchor" number="29.1">
 <h2><span class="header-section-number">29.1</span> Chi-square distribution<a href="Chapter_29.html#chi-square-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The Chi-square (<span class="math inline">\(\chi^{2}\)</span>) distribution is a continuous distribution in which values of <span class="math inline">\(\chi^{2}\)</span> can be any real number greater than or equal to 0. We can generate a <span class="math inline">\(\chi^{2}\)</span> distribution by adding up squared values that are sampled from a standard normal distribution <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, hence the ‘square’ in ‘Chi-square’.
+<p>The Chi-square (<span class="math inline">\(\chi^{2}\)</span>) distribution is a continuous distribution in which values of <span class="math inline">\(\chi^{2}\)</span> can be any real number greater than or equal to 0. We can generate a <span class="math inline">\(\chi^{2}\)</span> distribution by adding up squared values that are sampled from a standard normal distribution <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>, hence the ‘square’ in ‘Chi-square’.
 There is a lot to unpack in the previous sentence, so we can go through it step by step.
 First, we can take another look at the standard normal distribution from <a href="Chapter_15.html#normal-distribution">Section 15.4.4</a> (Figure 15.9).
 Suppose that we randomly sampled four values from the standard normal distribution.</p>
@@ -640,9 +641,9 @@ Figure 29.2: Probability density functions for three different Chi-square distri
 And as with the F-distribution, it is not necessary to memorise how the <span class="math inline">\(\chi^{2}\)</span> distribution changes with different degrees of freedom.
 The important point is that the distribution changes with different degrees of freedom, and we can map probabilities to the <span class="math inline">\(\chi^{2}\)</span> value on the x-axis in the same way as any other distribution.</p>
 <p>What does any of this have to do with count data? It actually is a bit messy.
-The <span class="math inline">\(\chi^{2}\)</span> distribution is not a perfect tool for comparing observed and expected counts <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
-After all, counts are integer values, and the <span class="math inline">\(\chi^{2}\)</span> distribution is clearly continuous (unlike, e.g., the binomial or Poisson distributions from <a href="##probability-distributions">Section 15.4</a>).
-The <span class="math inline">\(\chi^{2}\)</span> distribution is in fact a useful approximation for testing counts, and one that becomes less accurate when sample size <span class="citation">(<a href="#ref-Slakter1968" role="doc-biblioref">Slakter 1968</a>)</span> or expected count size <span class="citation">(<a href="#ref-Tate1973" role="doc-biblioref">Tate and Hyer 1973</a>)</span> is small.
+The <span class="math inline">\(\chi^{2}\)</span> distribution is not a perfect tool for comparing observed and expected counts <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>.
+After all, counts are integer values, and the <span class="math inline">\(\chi^{2}\)</span> distribution is clearly continuous (unlike, e.g., the binomial or Poisson distributions from <a href="#id_#probability-distributions">Section 15.4</a>).
+The <span class="math inline">\(\chi^{2}\)</span> distribution is in fact a useful approximation for testing counts, and one that becomes less accurate when sample size <span class="citation">(<a href="#ref-Slakter1968">Slakter 1968</a>)</span> or expected count size <span class="citation">(<a href="#ref-Tate1973">Tate and Hyer 1973</a>)</span> is small.
 Nevertheless, we can use the <span class="math inline">\(\chi^{2}\)</span> distribution as a tool for testing whether observed counts are significantly different from expected counts.
 The first test that we will look at is the goodness of fit test.</p>
 </div>
@@ -699,7 +700,7 @@ Next, we will look at testing associations between counts in different types of 
 <h2><span class="header-section-number">29.3</span> Chi-square test of association<a href="Chapter_29.html#chi-square-test-of-association" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The second kind of test that we will consider for count data is the Chi-square test of association.
 While the goodness of fit test focused on a single categorical variable (dam sizes in the example above), the Chi-square test of association focuses on two different categorical variables.
-What we want to know is whether or not the two categorical variables are independent of one another <span class="citation">(<a href="#ref-Box1978" role="doc-biblioref">Box, Hunter, and Hunter 1978</a>)</span>.
+What we want to know is whether or not the two categorical variables are independent of one another <span class="citation">(<a href="#ref-Box1978">Box, Hunter, and Hunter 1978</a>)</span>.
 In other words, does knowing something about one variable tell us anything about the other variable?
 A concrete example will make it easier to explain.
 We can again make use of the <a href="Chapter_17.html#Chapter_17">Chapter 17</a> game ‘Power Up!’.
@@ -808,7 +809,7 @@ Table 29.2 shows these probabilities as additional rows and columns added onto T
 </tr>
 </tbody>
 </table>
-<p>Since there are 30 total Android users (<span class="math inline">\(8 + 16 + 6 = 30\)</span>) and 30 total macOS users (<span class="math inline">\(10 + 8 + 12 = 30\)</span>), the probability of a player having an Android OS is <span class="math inline">\(30/60 = 0.5\)</span>, and the probability of a player having a macOS is also <span class="math inline">\(30 / 60 = 0.5\)</span>.
+<p>Since there are 30 total Android users (<span class="math inline">\(8 + 16 + 6 = 30\)</span>) and 30 total macOS users (<span class="math inline">\(10 + 8 + 12 = 30\)</span>), the probability of a player having an Android OS is <span class="math inline">\(30/60 = 0.5\)</span>, and the probability of a player having a macOS is also <span class="math inline">\(30 / 60 =  0.5\)</span>.
 Similarly, there are 18 small, 24 medium, and 18 large dam choices in total.
 Hence, the probability of a player choosing a small dam is <span class="math inline">\(18/60 = 0.3\)</span>, medium is <span class="math inline">\(24/60 = 0.4\)</span>, and large is <span class="math inline">\(18/60 = 0.3\)</span>.
 If these probabilities combine independently<a href="#fn68" class="footnote-ref" id="fnref68"><sup>68</sup></a>, then we can multiply them to find the probability of a particular combination of categories.
@@ -922,7 +923,7 @@ We get a value of about <span class="math inline">\(P = 0.0868\)</span>.
 In other words, if <span class="math inline">\(H_{0}\)</span> is true, then the probability of getting a <span class="math inline">\(\chi^{2}\)</span> of 4.889 or higher is <span class="math inline">\(P = 0.0868\)</span>.
 Consequently, because <span class="math inline">\(P &gt; 0.05\)</span>, we would not reject the null hypothesis.
 We should therefore conclude that there is no evidence for an association between OS and dam size choice.</p>
-<p>Jamovi will calculate the <span class="math inline">\(\chi^{2}\)</span> value and get the p-value for the appropriate degrees of freedom <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project 2024</a>)</span>.
+<p>Jamovi will calculate the <span class="math inline">\(\chi^{2}\)</span> value and get the p-value for the appropriate degrees of freedom <span class="citation">(<a href="#ref-Jamovi2022">The jamovi project 2024</a>)</span>.
 To do this, it is necessary to input the categorical data (e.g., Android, macOS) in a tidy format, which will be a focus of <a href="Chapter_31.html#Chapter_31">Chapter 31</a>.</p>
 <p>There is one final point regarding expected and observed values of the Chi-square test of association.
 There is another way of getting these expected values that is a bit faster (and more widely taught) but does not demonstrate the logic of expected counts as clearly.
@@ -977,7 +978,7 @@ This works for all of combinations of rows and columns, so we could do it to fin
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Box1978" class="csl-entry">
 Box, G E P, W G Hunter, and S J Hunter. 1978. <em><span class="nocase">Statistics for Experimenters: An Introduction to Design, Data Analysis, and Model Building</span></em>. John Wiley &amp; Sons, New York, USA.
 </div>
@@ -1000,11 +1001,11 @@ The jamovi project. 2024. <span>“Jamovi (Version 2.5).”</span> Sydney, Austr
 <div class="footnotes">
 <hr />
 <ol start="65">
-<li id="fn65"><p>A random variable <span class="math inline">\(X\)</span> has a <span class="math inline">\(\chi^{2}\)</span> distribution if and only if its probability density function is defined by <span class="citation">(<a href="#ref-Miller2004" role="doc-biblioref">Miller and Miller 2004</a>)</span>, <span class="math display">\[f(x) = \left\{\begin{array}{ll}\frac{1}{2^{\frac{2}{v}}\Gamma\left(\frac{v}{2}\right)}x^{\frac{v-2}{2}}e^{-\frac{x}{2}} &amp; \quad for\:x &gt; 0 \\ 0 &amp; \quad elsewhere \end{array}\right.\]</span> In this equation, <span class="math inline">\(v\)</span> is the degrees of freedom of the distribution.<a href="Chapter_29.html#fnref65" class="footnote-back">↩︎</a></p></li>
+<li id="fn65"><p>A random variable <span class="math inline">\(X\)</span> has a <span class="math inline">\(\chi^{2}\)</span> distribution if and only if its probability density function is defined by <span class="citation">(<a href="#ref-Miller2004">Miller and Miller 2004</a>)</span>, <span class="math display">\[f(x) = \left\{\begin{array}{ll}\frac{1}{2^{\frac{2}{v}}\Gamma\left(\frac{v}{2}\right)}x^{\frac{v-2}{2}}e^{-\frac{x}{2}} &amp; \quad for\:x &gt; 0 \\ 0 &amp; \quad elsewhere \end{array}\right.\]</span> In this equation, <span class="math inline">\(v\)</span> is the degrees of freedom of the distribution.<a href="Chapter_29.html#fnref65" class="footnote-back">↩︎</a></p></li>
 <li id="fn66"><p><a href="https://bradduthie.github.io/stats/app/chi-square/" class="uri">https://bradduthie.github.io/stats/app/chi-square/</a><a href="Chapter_29.html#fnref66" class="footnote-back">↩︎</a></p></li>
-<li id="fn67"><p>A lot of statisticians will use <span class="math inline">\(X^{2}\)</span> to represent the test statistic here instead of <span class="math inline">\(\chi^{2}\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. The difference is the upper case ‘X’ versus the Greek letter Chi, ‘<span class="math inline">\(\chi\)</span>’. The X is used since the test statistic we calculate here is not <em>technically</em> from the <span class="math inline">\(\chi^{2}\)</span> distribution, just an approximation. We will not worry about the distinction here, and to avoid confusion, we will just go with <span class="math inline">\(\chi^{2}\)</span>.<a href="Chapter_29.html#fnref67" class="footnote-back">↩︎</a></p></li>
+<li id="fn67"><p>A lot of statisticians will use <span class="math inline">\(X^{2}\)</span> to represent the test statistic here instead of <span class="math inline">\(\chi^{2}\)</span> <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>. The difference is the upper case ‘X’ versus the Greek letter Chi, ‘<span class="math inline">\(\chi\)</span>’. The X is used since the test statistic we calculate here is not <em>technically</em> from the <span class="math inline">\(\chi^{2}\)</span> distribution, just an approximation. We will not worry about the distinction here, and to avoid confusion, we will just go with <span class="math inline">\(\chi^{2}\)</span>.<a href="Chapter_29.html#fnref67" class="footnote-back">↩︎</a></p></li>
 <li id="fn68"><p>We can call these the ‘marginal probabilities’.<a href="Chapter_29.html#fnref68" class="footnote-back">↩︎</a></p></li>
-<li id="fn69"><p>This formula works due to a bit of a mathematical trick <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. The actual logic of the degrees of freedom is a bit more involved. From our total of <span class="math inline">\(k = 6\)</span> different combinations, we actually need to subtract one degree of freedom for the total sample size (<span class="math inline">\(N = 60\)</span>), then a degree of freedom for each variable probability estimated (i.e., subtract <span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span> because we need this many degrees of freedom to get the <span class="math inline">\(n_{1}\)</span> and <span class="math inline">\(n_{2}\)</span> probabilities, respectively; if we have all but one probability, then we know the last probability because the probabilities must sum to 1). Since we lose <span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span> degrees of freedom, and 1 for the sample size, this results in <span class="math inline">\(df = k - (n_{1} - 1) - (n_{2} - 1) - 1\)</span>. In the case of the ‘Power Up!’ example, we get <span class="math inline">\(df = 6 - (3 - 1) - (2 - 1) - 1 = 2\)</span>. The <span class="math inline">\(df = (n_{1} - 1) \times (n_{2} - 1)\)</span> formulation is possible because <span class="math inline">\(k = n_{1} \times n_{2}\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.<a href="Chapter_29.html#fnref69" class="footnote-back">↩︎</a></p></li>
+<li id="fn69"><p>This formula works due to a bit of a mathematical trick <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>. The actual logic of the degrees of freedom is a bit more involved. From our total of <span class="math inline">\(k = 6\)</span> different combinations, we actually need to subtract one degree of freedom for the total sample size (<span class="math inline">\(N = 60\)</span>), then a degree of freedom for each variable probability estimated (i.e., subtract <span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span> because we need this many degrees of freedom to get the <span class="math inline">\(n_{1}\)</span> and <span class="math inline">\(n_{2}\)</span> probabilities, respectively; if we have all but one probability, then we know the last probability because the probabilities must sum to 1). Since we lose <span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span> degrees of freedom, and 1 for the sample size, this results in <span class="math inline">\(df = k - (n_{1} - 1) - (n_{2} - 1) - 1\)</span>. In the case of the ‘Power Up!’ example, we get <span class="math inline">\(df = 6 - (3 - 1) - (2 - 1) - 1 = 2\)</span>. The <span class="math inline">\(df = (n_{1} - 1) \times (n_{2} - 1)\)</span> formulation is possible because <span class="math inline">\(k = n_{1} \times n_{2}\)</span> <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>.<a href="Chapter_29.html#fnref69" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -1027,42 +1028,42 @@ The jamovi project. 2024. <span>“Jamovi (Version 2.5).”</span> Sydney, Austr
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/09-Correlation.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/09-Correlation.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>

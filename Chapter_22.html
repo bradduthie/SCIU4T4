@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 22 The t-test | Statistical Techniques for Biological and Environmental Sciences</title>
   <meta name="description" content="This is a lab book for the University of Stirling second year undergraduate Biological and Environmental Sciences statistics module." />
-  <meta name="generator" content="bookdown 0.39 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.43 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 22 The t-test | Statistical Techniques for Biological and Environmental Sciences" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="Brad Duthie" />
 
 
-<meta name="date" content="2025-04-09" />
+<meta name="date" content="2026-01-02" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,7 +56,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -110,6 +110,7 @@ code span.wa { font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -652,7 +653,7 @@ This could indeed be the case, and how we actually conduct the independent sampl
 If we are willing to make this assumption, then we can pool the variances (<span class="math inline">\(s^{2}_{p}\)</span>) together to get a combined (more accurate) estimate of the standard error <span class="math inline">\(\mathrm{SE}(\bar{y})\)</span> from both samples<a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a><span class="math inline">\(^{,}\)</span><a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a>.
 This version of the independent samples t-test is called the ‘Student’s t-test’.</p>
 <p>If we are unwilling to assume that <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> have the same variance, then we need to use an alternative version of the independent samples t-test.
-This alternative version is called the Welch’s t-test <span class="citation">(<a href="#ref-Welch1938" role="doc-biblioref">Welch 1938</a>)</span>, also known as the unequal variances t-test <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>; <a href="#ref-Ruxton2006" role="doc-biblioref">Ruxton 2006</a>)</span>.
+This alternative version is called the Welch’s t-test <span class="citation">(<a href="#ref-Welch1938">Welch 1938</a>)</span>, also known as the unequal variances t-test <span class="citation">(<a href="#ref-Dytham2011">Dytham 2011</a>; <a href="#ref-Ruxton2006">Ruxton 2006</a>)</span>.
 In contrast to the Student’s t-test, the Welch’s t-test does not pool the variances of the samples together<a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a>.
 While there are some mathematical differences between the Student’s and Welch’s independent samples t-tests, the general concept is the same.</p>
 <p>This raises the question, when is it acceptable to assume that <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> have the same variance?
@@ -661,10 +662,10 @@ Is this close enough to treat them as the same?
 Like a lot of choices in statistics, there is no clear right or wrong answer.
 In theory, if both samples do come from a population with the same variance (<span class="math inline">\(\sigma^{2}_{1} = \sigma^{2}_{2}\)</span>), then the pooled variance is better because it gives us a bit more statistical power; we can correctly reject the null hypothesis more often when it is actually false (i.e., it decreases the probability of a Type II error).
 Nevertheless, the increase in statistical power is quite low, and the risk of pooling the variances when they actually are not the same increases the risk that we reject the null hypothesis when it is actually true (i.e., it increases the probability of a Type I error, which we definitely do not want!).
-For this reason, some researchers advocate using the Welch’s t-test by default, unless there is a very good reason to believe <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> are sampled from populations with the same variance <span class="citation">(<a href="#ref-Ruxton2006" role="doc-biblioref">Ruxton 2006</a>; <a href="#ref-Delacre2017" role="doc-biblioref">Delacre, Lakens, and Leys 2017</a>)</span>.</p>
+For this reason, some researchers advocate using the Welch’s t-test by default, unless there is a very good reason to believe <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> are sampled from populations with the same variance <span class="citation">(<a href="#ref-Ruxton2006">Ruxton 2006</a>; <a href="#ref-Delacre2017">Delacre, Lakens, and Leys 2017</a>)</span>.</p>
 <p>Here we will adopt the traditional approach of first testing the null hypothesis that <span class="math inline">\(\sigma^{2}_{1} = \sigma^{2}_{2}\)</span> using a homogeneity of variances test.
 If we fail to reject this null hypothesis (i.e., <span class="math inline">\(P &gt; 0.05\)</span>), then we will use the Student’s t-test, and if we reject it (i.e., <span class="math inline">\(P &lt; 0.05\)</span>), then we will use the Welch’s t-test.
-This approach is mostly used for pedagogical reasons; in practice, defaulting to the Welch’s t-test is fine <span class="citation">(<a href="#ref-Ruxton2006" role="doc-biblioref">Ruxton 2006</a>; <a href="#ref-Delacre2017" role="doc-biblioref">Delacre, Lakens, and Leys 2017</a>)</span>.
+This approach is mostly used for pedagogical reasons; in practice, defaulting to the Welch’s t-test is fine <span class="citation">(<a href="#ref-Ruxton2006">Ruxton 2006</a>; <a href="#ref-Delacre2017">Delacre, Lakens, and Leys 2017</a>)</span>.
 Testing for homogeneity of variances is quite straightforward in most statistical programs, and we will save the conceptual and mathematical details of this for when we look at the F-distribution in <a href="Chapter_24.html#Chapter_24">Chapter 24</a>.
 But the general idea is that if <span class="math inline">\(\sigma^{2}_{1} = \sigma^{2}_{2}\)</span>, then the ratio of variances (<span class="math inline">\(\sigma^{2}_{1}/\sigma^{2}_{2}\)</span>) has its own null distribution (like the normal distribution, or the t-distribution), and we can see the probability of getting a deviation of <span class="math inline">\(\sigma^{2}_{1}/\sigma^{2}_{2}\)</span> from 1 if <span class="math inline">\(\sigma^{2}_{1} = \sigma^{2}_{2}\)</span> is true.</p>
 <p>In the case of the test scores from the two samples of students (<span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span>), a homogeneity of variance test reveals no evidence that <span class="math inline">\(s^{2}_{1} = 69.46\)</span> and <span class="math inline">\(s^{2}_{2} = 76.15\)</span> are significantly different (<span class="math inline">\(P = 0.834\)</span>).
@@ -799,7 +800,7 @@ Assumptions that we make when conducting a t-test are as follows:</p>
 </ul>
 <p>Note that if we are running a Student’s independent samples t-test that pools sample variances (rather than a Welch’s t-test), then we are also assuming that sample variances are the same (i.e., homogeneity of variance).
 The last bullet point concerning normally distributed sample means is frequently misunderstood to mean that the sample data themselves need to be normally distributed.
-This is not the case <span class="citation">(<a href="#ref-Johnson1995" role="doc-biblioref">Johnson 1995</a>; <a href="#ref-Lumley2002" role="doc-biblioref">Lumley et al. 2002</a>)</span>.
+This is not the case <span class="citation">(<a href="#ref-Johnson1995">Johnson 1995</a>; <a href="#ref-Lumley2002">Lumley et al. 2002</a>)</span>.
 Instead, what we are really concerned with is the distribution of sample means (<span class="math inline">\(\bar{y}\)</span>) around the true mean (<span class="math inline">\(\mu\)</span>).
 And given a sufficiently large sample size, a normal distribution is assured due to the central limit theorem (see <a href="Chapter_16.html#Chapter_16">Chapter 16</a>).</p>
 <p>Moreover, while a normally distributed variable is not <em>necessary</em> for satisfying the assumptions of a t-test (or many other tests introduced in this book), it is <em>sufficient</em>.
@@ -808,13 +809,13 @@ So when is a sample size large enough, or close enough to being normally distrib
 There really is not a definitive answer to this question, and the truth is that most statisticians will prefer to use a histogram (or some other visualisation approach) and their best judgement to decide if the assumption of normality is likely to be violated.</p>
 <p>This book will take the traditional approach of running a statistical test called the Shapiro-Wilk test to test the null hypothesis that data are normally distributed.
 If we reject the null hypothesis (when <span class="math inline">\(P &lt; 0.05\)</span>), then we will conclude that the assumption of normality is violated, and the t-test is not appropriate.
-The details of how the Shapiro-Wilk test works are not important for now, but the test can be easily run using jamovi <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project 2024</a>)</span>.
+The details of how the Shapiro-Wilk test works are not important for now, but the test can be easily run using jamovi <span class="citation">(<a href="#ref-Jamovi2022">The jamovi project 2024</a>)</span>.
 If we reject the null hypothesis that the data are normally distributed, then we can use one of two methods to run our statistical test.</p>
 <ol style="list-style-type: decimal">
 <li>Transform the data in some way (e.g., take the log of all values) to improve normality.</li>
 <li>Use a non-parametric alternative test.</li>
 </ol>
-<p>The word ‘non-parametric’ in this context just means that there are no assumptions (or very few) about the shape of the distribution <span class="citation">(<a href="#ref-Dytham2011" role="doc-biblioref">Dytham 2011</a>)</span>.
+<p>The word ‘non-parametric’ in this context just means that there are no assumptions (or very few) about the shape of the distribution <span class="citation">(<a href="#ref-Dytham2011">Dytham 2011</a>)</span>.
 We will consider the non-parametric equivalents of the one-sample t-test (the Wilcoxon test) and independent samples t-test (Mann-Whitney U test) in the next section.
 But first, we can show how transformations can be used to improve the fit of the data to satisfy model assumptions.</p>
 <p>Often data will have a skewed distribution (see <a href="Chapter_13.html#Chapter_13">Chapter 13</a>).
@@ -830,7 +831,7 @@ Figure 22.4: Set of values with a high positive skew (A), which, when log-transf
 But taking the natural log of all the values of <span class="math inline">\(X\)</span> makes the dataset more normally distributed (Figure 22.4B), thereby more convincingly satisfying the normality assumption required by the t-test.
 This might seem a bit suspicious at first.
 Is it really okay to just take the logarithm of all the data instead of the actual values that were measured?
-Actually, there is no real scientific or statistical reason that we need to use the original scale <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+Actually, there is no real scientific or statistical reason that we need to use the original scale <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>.
 Using the log or the square-root of a set of numbers is perfectly fine if it helps satisfy the assumptions of a statistical test.</p>
 </div>
 <div id="non-parametric-alternatives" class="section level2 hasAnchor" number="22.5">
@@ -961,7 +962,7 @@ The p-value associated with <span class="math inline">\(W^{+} = 21\)</span> and 
 <p>A non-parametric alternative to the independent samples t-test is the Mann-Whitney U test.
 That is, a Mann-Whitney U test can be used if we want to know whether the median of two independent groups is significantly different.
 Like the Wilcoxon test, the Mann-Whitney U test uses the ranks of values rather than the values themselves.
-In the Mann-Whitney U test, the general idea is to rank all of the data across both groups, then see if the sum of the ranks is significantly different <span class="citation">(<a href="#ref-Fryer1966" role="doc-biblioref">Fryer 1966</a>; <a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+In the Mann-Whitney U test, the general idea is to rank all of the data across both groups, then see if the sum of the ranks is significantly different <span class="citation">(<a href="#ref-Fryer1966">Fryer 1966</a>; <a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>.
 To demonstrate this, we can again consider the same hypothetical dataset used when demonstrating the <a href="Chapter_22.html#independent-samples-t-test">independent samples t-test</a> above.
 Test scores from the current year (<span class="math inline">\(y_{1}\)</span>) are below.</p>
 <pre><code>49.3, 62.9, 73.7, 65.5, 69.6, 70.7, 61.5, 73.4, 61.1, 78.1</code></pre>
@@ -1101,10 +1102,10 @@ We therefore calculate <span class="math inline">\(U_{1}\)</span>,</p>
 <p>Whichever of <span class="math inline">\(U_{1}\)</span> or <span class="math inline">\(U_{2}\)</span> is lower<a href="#fn50" class="footnote-ref" id="fnref50"><sup>50</sup></a> is set to <span class="math inline">\(U\)</span>, so for our example, <span class="math inline">\(U = 27\)</span>.
 Note that if <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> have similar medians, then <span class="math inline">\(U\)</span> will be relatively high.
 But if <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> have much different medians, then <span class="math inline">\(U\)</span> will be relatively low.
-One way to think about this is that if <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> are very different, then one of the two samples should have very low ranks, and the other should have very high ranks <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>.
+One way to think about this is that if <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> are very different, then one of the two samples should have very low ranks, and the other should have very high ranks <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>.
 But if <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> are very similar, then their summed ranks should be nearly the same.
 Hence, if the deviation of <span class="math inline">\(U\)</span> is greater than what is predicted given the null hypothesis in which the distributions (and therefore the medians) of <span class="math inline">\(y_{1}\)</span> and <span class="math inline">\(y_{2}\)</span> are identical, then we can reject <span class="math inline">\(H_{0}\)</span>.</p>
-<p>As with the <a href="Chapter_22.html#wilcoxon-test">Wilcoxon test</a>, we could compare our <span class="math inline">\(U\)</span> test statistic to a critical value from a <a href="#mann-whitney-u-critical-values">table</a>, but jamovi will also just give us the test statistic <span class="math inline">\(U\)</span> and associated p-value <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project 2024</a>)</span>.
+<p>As with the <a href="Chapter_22.html#wilcoxon-test">Wilcoxon test</a>, we could compare our <span class="math inline">\(U\)</span> test statistic to a critical value from a <a href="#mann-whitney-u-critical-values">table</a>, but jamovi will also just give us the test statistic <span class="math inline">\(U\)</span> and associated p-value <span class="citation">(<a href="#ref-Jamovi2022">The jamovi project 2024</a>)</span>.
 In our example above, <span class="math inline">\(U = 27\)</span>, <span class="math inline">\(N_{1} = 10\)</span>, and <span class="math inline">\(N_{2} = 9\)</span> has a p-value of <span class="math inline">\(P = 0.156\)</span>, so we do not reject the null hypothesis.
 We therefore conclude that there is no evidence that there is a difference in the median test scores between the two years.</p>
 </div>
@@ -1121,7 +1122,7 @@ If assumptions of the t-test are violated, then it might be necessary to use a d
 </div>
 </div>
 <h3>References<a href="references.html#references" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-Delacre2017" class="csl-entry">
 Delacre, Marie, Daniël Lakens, and Christophe Leys. 2017. <span>“<span class="nocase">Why psychologists should by default use Welch’s t-test instead of Student’s t-test</span>.”</span> <em>International Review of Social Psychology</em> 30 (1): 92–101. <a href="https://doi.org/10.5334/irsp.82">https://doi.org/10.5334/irsp.82</a>.
 </div>
@@ -1157,11 +1158,11 @@ Welch, B. L. 1938. <span>“The Significance of the Difference Between Two Means
 <hr />
 <ol start="45">
 <li id="fn45"><p><a href="https://bradduthie.github.io/stats/app/t_score/" class="uri">https://bradduthie.github.io/stats/app/t_score/</a><a href="Chapter_22.html#fnref45" class="footnote-back">↩︎</a></p></li>
-<li id="fn46"><p>This is not a calculation that needs to be done by hand anymore. Statistical software such as jamovi will calculate <span class="math inline">\(s_{p}\)</span> automatically from a dataset <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project 2024</a>)</span>. For those interested, the formula that it uses to make this calculation is, <span class="math display">\[s_{p} = \sqrt{\frac{\left(n_{1} - 1 \right) s^{2}_{y_{1}} + \left(n_{2} - 1 \right) s^{2}_{y_{2}}}{n_{1} + n_{2} - 2}}.\]</span> This looks like a lot, but really all the equation is doing is adding the two variances (<span class="math inline">\(s^{2}_{y_{1}}\)</span> and <span class="math inline">\(s^{2}_{y_{2}}\)</span>) together, but weighing them by their degrees of freedom (<span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span>), so that the one with a higher sample size has more influence on the pooled standard deviation. To get <span class="math inline">\(\mathrm{SE}(\bar{y})\)</span>, we then need to multiply by the square root of <span class="math inline">\((n_{1} + n_{2})/(n_{1}n_{2})\)</span>, <span class="math display">\[\mathrm{SE}(\bar{y}) = s_{p}\sqrt{\frac{n_{1} + n_{2}}{n_{1}n_{2}}}.\]</span> It might be useful to try this once by hand, but only to convince yourself that it matches the t-statistic produced by jamovi.<a href="Chapter_22.html#fnref46" class="footnote-back">↩︎</a></p></li>
-<li id="fn47"><p>The degrees of freedom for the t-statistic is <span class="math inline">\(df = n_{1} + n_{2} - 2\)</span> <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>. Jamovi handles all of this automatically <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project 2024</a>)</span>, so we will not dwell on it here.<a href="Chapter_22.html#fnref47" class="footnote-back">↩︎</a></p></li>
-<li id="fn48"><p>The equation for calculating the Welch’s t-statistic is actually a bit simpler than the Student’s t-test that uses the pooled estimate <span class="citation">(<a href="#ref-Ruxton2006" role="doc-biblioref">Ruxton 2006</a>)</span>. Instead of using <span class="math inline">\(s_{p}\)</span>, we define our t-statistic as, <span class="math display">\[t_{s} = \frac{\bar{y}_{1} - \bar{y}_{2}}{ \sqrt{ \frac{s^{2}_{1}}{n_{1}} + \frac{s^{2}_{2}}{n_{2}}} }.\]</span> The degrees of freedom, however, is quite a bit messier than it is for the independent samples Student’s t-test <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, <span class="math display">\[v = \frac{\left(\frac{1}{n_{1}} + \frac{(s^{2}_{2} / s^{2}_{1})}{n_{2}} \right)^{2}}{\frac{1}{n^{2}_{1}\left(n_{1} - 1 \right)} + \frac{(s^{2}_{2} / s^{2}_{1})^{2}}{n^{2}_{2}\left(n_{2} - 1 \right)}}.\]</span> Of course, jamovi will make these calculations for us, so it is not necessary to do it by hand.<a href="Chapter_22.html#fnref48" class="footnote-back">↩︎</a></p></li>
-<li id="fn49"><p>Actually, the Wilcoxon signed-rank test technically tests the null hypothesis that two distributions are identical, not just that the medians are identical <span class="citation">(<a href="#ref-Johnson1995" role="doc-biblioref">Johnson 1995</a>; <a href="#ref-Lumley2002" role="doc-biblioref">Lumley et al. 2002</a>)</span>. Note that if one distribution has a higher variance than another, or is differently skewed, it will also affect the ranks. In other words, if we want to compare medians, then we need to assume that the distributions have the same shape <span class="citation">(<a href="#ref-Lumley2002" role="doc-biblioref">Lumley et al. 2002</a>)</span>. Because of this, and because the central limit theorem ensures that means will be normally distributed given a sufficiently high sample size (in which case, t-test assumptions are more likely to be satisfied), some researchers suggest that non-parametric statistics such as the Wilcoxon signed rank test should be used with caution <span class="citation">(<a href="#ref-Johnson1995" role="doc-biblioref">Johnson 1995</a>)</span>.<a href="Chapter_22.html#fnref49" class="footnote-back">↩︎</a></p></li>
-<li id="fn50"><p>Note that you could also take the higher of the two values <span class="citation">(<a href="#ref-Sokal1995" role="doc-biblioref">Sokal and Rohlf 1995</a>)</span>, which is what the statistical programming language R reports <span class="citation">(<a href="#ref-Rproject" role="doc-biblioref">R Core Team 2022</a>)</span>; jamovi reports the lower of the two <span class="citation">(<a href="#ref-Jamovi2022" role="doc-biblioref">The jamovi project 2024</a>)</span>. The null distribution from which the (identical) p-value would be calculated would just be different in this case.<a href="Chapter_22.html#fnref50" class="footnote-back">↩︎</a></p></li>
+<li id="fn46"><p>This is not a calculation that needs to be done by hand anymore. Statistical software such as jamovi will calculate <span class="math inline">\(s_{p}\)</span> automatically from a dataset <span class="citation">(<a href="#ref-Jamovi2022">The jamovi project 2024</a>)</span>. For those interested, the formula that it uses to make this calculation is, <span class="math display">\[s_{p} = \sqrt{\frac{\left(n_{1} - 1 \right) s^{2}_{y_{1}} + \left(n_{2} - 1 \right) s^{2}_{y_{2}}}{n_{1} + n_{2} - 2}}.\]</span> This looks like a lot, but really all the equation is doing is adding the two variances (<span class="math inline">\(s^{2}_{y_{1}}\)</span> and <span class="math inline">\(s^{2}_{y_{2}}\)</span>) together, but weighing them by their degrees of freedom (<span class="math inline">\(n_{1} - 1\)</span> and <span class="math inline">\(n_{2} - 1\)</span>), so that the one with a higher sample size has more influence on the pooled standard deviation. To get <span class="math inline">\(\mathrm{SE}(\bar{y})\)</span>, we then need to multiply by the square root of <span class="math inline">\((n_{1} + n_{2})/(n_{1}n_{2})\)</span>, <span class="math display">\[\mathrm{SE}(\bar{y}) = s_{p}\sqrt{\frac{n_{1} + n_{2}}{n_{1}n_{2}}}.\]</span> It might be useful to try this once by hand, but only to convince yourself that it matches the t-statistic produced by jamovi.<a href="Chapter_22.html#fnref46" class="footnote-back">↩︎</a></p></li>
+<li id="fn47"><p>The degrees of freedom for the t-statistic is <span class="math inline">\(df = n_{1} + n_{2} - 2\)</span> <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>. Jamovi handles all of this automatically <span class="citation">(<a href="#ref-Jamovi2022">The jamovi project 2024</a>)</span>, so we will not dwell on it here.<a href="Chapter_22.html#fnref47" class="footnote-back">↩︎</a></p></li>
+<li id="fn48"><p>The equation for calculating the Welch’s t-statistic is actually a bit simpler than the Student’s t-test that uses the pooled estimate <span class="citation">(<a href="#ref-Ruxton2006">Ruxton 2006</a>)</span>. Instead of using <span class="math inline">\(s_{p}\)</span>, we define our t-statistic as, <span class="math display">\[t_{s} = \frac{\bar{y}_{1} - \bar{y}_{2}}{ \sqrt{ \frac{s^{2}_{1}}{n_{1}} + \frac{s^{2}_{2}}{n_{2}}} }.\]</span> The degrees of freedom, however, is quite a bit messier than it is for the independent samples Student’s t-test <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>, <span class="math display">\[v = \frac{\left(\frac{1}{n_{1}} + \frac{(s^{2}_{2} / s^{2}_{1})}{n_{2}} \right)^{2}}{\frac{1}{n^{2}_{1}\left(n_{1} - 1 \right)} + \frac{(s^{2}_{2} / s^{2}_{1})^{2}}{n^{2}_{2}\left(n_{2} - 1 \right)}}.\]</span> Of course, jamovi will make these calculations for us, so it is not necessary to do it by hand.<a href="Chapter_22.html#fnref48" class="footnote-back">↩︎</a></p></li>
+<li id="fn49"><p>Actually, the Wilcoxon signed-rank test technically tests the null hypothesis that two distributions are identical, not just that the medians are identical <span class="citation">(<a href="#ref-Johnson1995">Johnson 1995</a>; <a href="#ref-Lumley2002">Lumley et al. 2002</a>)</span>. Note that if one distribution has a higher variance than another, or is differently skewed, it will also affect the ranks. In other words, if we want to compare medians, then we need to assume that the distributions have the same shape <span class="citation">(<a href="#ref-Lumley2002">Lumley et al. 2002</a>)</span>. Because of this, and because the central limit theorem ensures that means will be normally distributed given a sufficiently high sample size (in which case, t-test assumptions are more likely to be satisfied), some researchers suggest that non-parametric statistics such as the Wilcoxon signed rank test should be used with caution <span class="citation">(<a href="#ref-Johnson1995">Johnson 1995</a>)</span>.<a href="Chapter_22.html#fnref49" class="footnote-back">↩︎</a></p></li>
+<li id="fn50"><p>Note that you could also take the higher of the two values <span class="citation">(<a href="#ref-Sokal1995">Sokal and Rohlf 1995</a>)</span>, which is what the statistical programming language R reports <span class="citation">(<a href="#ref-Rproject">R Core Team 2022</a>)</span>; jamovi reports the lower of the two <span class="citation">(<a href="#ref-Jamovi2022">The jamovi project 2024</a>)</span>. The null distribution from which the (identical) p-value would be calculated would just be different in this case.<a href="Chapter_22.html#fnref50" class="footnote-back">↩︎</a></p></li>
 <li id="fn51"><p>Note, you could also test the null hypothesis that the difference between paired values is some value other than zero, but this is quite rare in practice.<a href="Chapter_22.html#fnref51" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
@@ -1185,42 +1186,42 @@ Welch, B. L. 1938. <span>“The Significance of the Difference Between Two Means
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/rstudio/bookdown-demo/edit/master/06-Hypothesis_Testing.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": null,
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/06-Hypothesis_Testing.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>
